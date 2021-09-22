@@ -1,0 +1,58 @@
+.header {
+  /* slightly lighter to match hero image */
+  background-color: hsl(0, 0%, 10%);
+  color: #ffffff;
+  height: 8rem;
+}
+
+.header__content {
+  max-width: 128rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__nav {
+  width: 40.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link:link,
+.header__link:visited {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:active {
+  color: #d87d4a;
+}
+
+.header__link:focus {
+  outline-offset: 5px;
+  outline: 3px solid #d87d4a;
+}
+
+.header__btn {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.header__btn:focus {
+  outline-offset: 5px;
+  outline: 3px solid #d87d4a;
+}

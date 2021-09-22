@@ -1,0 +1,78 @@
+.featurerow {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 6%);
+}
+
+.featurerow__content {
+  max-width: 128rem;
+  padding: 1.2rem;
+  margin: 9.6rem auto 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.feature__card {
+  position: relative;
+  width: 35rem;
+  height: 28rem;
+}
+
+.feature__image {
+  /* height: 16rem; */
+  width: 18rem;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.feature__content {
+  position: absolute;
+  bottom: 0;
+
+  height: 70%;
+  width: 100%;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1rem;
+}
+
+.feature__content p {
+  /* HEADPHONES */
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  text-align: center;
+  margin-top: 9.6rem;
+}
+
+.feature__link:link,
+.feature__link:visited {
+  /* SHOP */
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 6%);
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.feature__link:hover,
+.feature__link:active {
+  color: #d87d4a;
+}
+
+.feature__link:focus {
+  outline-offset: 5px;
+  outline: 3px solid #d87d4a;
+}

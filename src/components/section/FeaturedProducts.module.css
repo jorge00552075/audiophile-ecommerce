@@ -1,0 +1,134 @@
+.featured {
+  margin-top: 9.6rem;
+}
+
+.featured__grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+  max-width: 111rem;
+  padding: 1.2rem;
+  margin: 0 auto;
+}
+/* ROW - 1 */
+.featured__row-1 {
+  position: relative;
+
+  height: 56rem;
+  background-color: hsl(22, 65%, 57%);
+  grid-column: 1 / span 2;
+  overflow: hidden;
+}
+
+.pattern-circles {
+  transform: translateX(-15%);
+}
+
+.featured__row-1 .featured__image {
+  position: absolute;
+  left: 10%;
+  bottom: -1rem;
+  width: 40rem;
+}
+
+.featured__row-1 .featured__content {
+  position: absolute;
+  top: 25%;
+  right: 12.5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 35rem;
+}
+
+.featured__title {
+  font-size: 5.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: hsl(0, 0%, 100%);
+
+  margin-bottom: 2.4rem;
+}
+
+.featured__title--sm {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 2.4rem;
+}
+
+.text-red {
+  color: red;
+}
+
+.featured__text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsl(0, 0%, 100%);
+
+  margin-bottom: 3.2rem;
+}
+
+.featured__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
+}
+
+.featured__link--outline {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  color: hsl(0, 0%, 0%);
+  background-color: transparent;
+  border: 1px solid hsl(0, 0%, 0%);
+}
+
+/* ROW - 2 */
+.featured__row-2 {
+  position: relative;
+  grid-column: 1 / span 2;
+}
+
+.featured__row-2 .featured__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12.5%;
+}
+
+.featured__image--2 {
+  width: 100%;
+  height: 100%;
+}
+
+/* ROW - 3 - COLUMN - 1 */
+.featured__row-3 {
+  grid-column: 1 / span 1;
+}
+
+/* ROW - 3 - COLUMN - 2 */
+.featured__row-4 {
+  background-color: hsl(0, 0%, 95%);
+  grid-column: 2 / span 1;
+}
+
+.featured__row-4 .featured__content {
+  text-align: center;
+  margin-top: 10rem;
+}
