@@ -1,0 +1,43 @@
+.about {
+  margin-top: 9.6rem;
+}
+
+.about__content {
+  max-width: 111rem;
+  padding: 1.2rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.about__heading {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.05;
+
+  margin-bottom: 2.4rem;
+}
+
+.about__heading span {
+  color: hsl(22, 65%, 57%);
+}
+
+.about__text {
+  font-size: 1.5rem;
+  line-height: 1.7;
+
+  color: hsl(0, 0%, 50%);
+}
+
+.col__1__content {
+  width: 82%;
+  margin: 0 auto;
+  transform: translateY(50%);
+}
+
+.about__image {
+  border-radius: 10px;
+}

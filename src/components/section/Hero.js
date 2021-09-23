@@ -20,7 +20,7 @@ function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <a href="/headphones/p-1" className={styles.hero__btn}>
+            <a href="xx99-headphones" className={styles.hero__btn}>
               See product
             </a>
           </div>

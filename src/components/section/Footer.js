@@ -63,7 +63,9 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p>Copyright 2021. All Rights Reserved</p>
+        <p className={styles.footer__copyright}>
+          Copyright 2021. All Rights Reserved
+        </p>
       </div>
     </footer>
   );

@@ -1,16 +1,16 @@
 .featurerow {
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(0, 0%, 6%);
+  margin-top: 9.6rem;
 }
 
 .featurerow__content {
-  max-width: 128rem;
+  max-width: 111rem;
   padding: 1.2rem;
-  margin: 9.6rem auto 0 auto;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  gap: 1.2rem;
 }
 
 .feature__card {
@@ -20,7 +20,6 @@
 }
 
 .feature__image {
-  /* height: 16rem; */
   width: 18rem;
   position: absolute;
   top: 10%;
@@ -37,6 +36,7 @@
   width: 100%;
   background-color: hsl(0, 0%, 95%);
   border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .feature__content p {

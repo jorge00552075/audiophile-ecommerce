@@ -9,7 +9,6 @@ function FeaturedProducts() {
   return (
     <section className={styles.featured}>
       <div className={styles['featured__grid-container']}>
-        {/* <div grid grid-cols-2 gap-10 max-w-screen-xl p-5 my-0 mx-auto> */}
         <div className={styles['featured__row-1']}>
           <img
             src={circles}
@@ -23,10 +22,10 @@ function FeaturedProducts() {
           />
           <div className={styles.featured__content}>
             <h2 className={styles.featured__title}>ZX9 Speakers</h2>
-            <h3 className={styles.featured__text}>
+            <p className={styles.featured__text}>
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
-            </h3>
+            </p>
             <a href="/zx9-speaker" className={styles.featured__link}>
               See Product
             </a>
@@ -38,7 +37,7 @@ function FeaturedProducts() {
             <h3 className={styles['featured__title--sm']}>ZX7 Speaker</h3>
             <a
               href="/zx7-speaker"
-              className={styles['featured__link--outline']}
+              className={`${styles['featured__link']} ${styles['featured__link--outline']}`}
             >
               See Product
             </a>
@@ -58,7 +57,7 @@ function FeaturedProducts() {
             <h3 className={styles['featured__title--sm']}>YX1 Earphones</h3>
             <a
               href="/yx1-earphones"
-              className={styles['featured__link--outline']}
+              className={`${styles['featured__link']} ${styles['featured__link--outline']}`}
             >
               See Product
             </a>

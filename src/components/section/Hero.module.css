@@ -1,12 +1,11 @@
 .hero {
-  /* slightly lighter to match hero image */
   background-color: hsl(0, 0%, 10%);
   color: hsl(0, 0%, 100%);
 }
 
 .hero__content {
   position: relative;
-  max-width: 128rem;
+  max-width: 111rem;
   height: 65rem;
   padding: 12px;
   margin: 0 auto;
@@ -73,8 +72,4 @@
 .hero__btn:focus {
   outline-offset: 5px;
   outline: 3px solid hsl(0, 0%, 100%);
-}
-
-.hero__col_2 {
-  /* overflow: hidden; */
 }

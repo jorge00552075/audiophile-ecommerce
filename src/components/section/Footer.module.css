@@ -1,12 +1,13 @@
 .footer {
+  margin-top: 9.6rem;
+
   background-color: hsl(0, 0%, 6%);
   color: hsl(0, 0%, 100%);
-  height: 36.5rem;
 }
 
 .footer__content {
   max-width: 128rem;
-  height: 100%;
+  height: 36.5rem;
   margin: 0 auto;
   padding: 6.4rem 1.2rem;
 
@@ -65,10 +66,15 @@
 .footer__social {
   display: flex;
   gap: 1.6rem;
+  padding: 1.2rem;
 }
 
 .social__link:link,
 .social__link:visited {
+  /* CENTER ICONS */
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .social__link:focus {
@@ -78,4 +84,9 @@
 
 .social__link *:hover {
   fill: #d87d4a;
+}
+
+.footer__copyright {
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 50%);
 }

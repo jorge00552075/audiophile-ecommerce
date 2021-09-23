@@ -1,0 +1,14 @@
+.pagetitle {
+  height: 25rem;
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 100%);
+}
+
+.pagetitle__text {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  text-align: center;
+  transform: translateY(152%);
+}

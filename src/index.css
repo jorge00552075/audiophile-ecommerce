@@ -1,39 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap');
 /* 
 --- 01 TYPOGRAPHY SYSTEM
 
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
+- Font weights
+Light: 300
+Normal: 400
+Medium: 500
+Bold: 700
+
+- Line heights
+Small: 1.05
+Large: 1.7
+
 --- 02 COLORS
-#D87D4A - Primary Color
-#FBAF85
+hsl(22, 65%, 57%) - Primary Color
+hsl(21, 94%, 75%)
 
-#000000
-#101010
+hsl(0, 0%, 0%)
+hsl(0, 0%, 6%)
+hsl(0, 0%, 10%);
 
-#FFFFFF
-#FAFAFA
-#F1F1F1
+hsl(0, 0%, 100%)
+hsl(0, 0%, 98%)
+hsl(0, 0%, 95%)
+hsl(0, 0%, 50%);
 
---- 03 LINE HEIGHT
-1.05
-1.7
+--- 05 SHADOWS
+Regular: 
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+Medium: 
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+--- 06 BORDER-RADIUS
+border-radius: 10px;
 
 --- LETTER SPACING
-.5px
-1px
-2px
-10px
-
---- BORDER RADIUS 
-1rem
+0.5
+Small: 1
+Medium: 2
+XX-Large: 10
 
 --- 07 WHITESPACE
 
 - Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+- Gap
+1.0
+1.2
+1.6
+2.4
 
  */
 * {

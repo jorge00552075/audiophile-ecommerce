@@ -6,7 +6,7 @@
 }
 
 .header__content {
-  max-width: 128rem;
+  max-width: 111rem;
   height: 100%;
   margin: 0 auto;
   padding: 12px;
@@ -50,6 +50,11 @@
   border: none;
   background-color: transparent;
   color: #ffffff;
+
+  /* Center Icon */
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .header__btn:focus {
