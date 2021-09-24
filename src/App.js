@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import Header from './components/section/Header';
-import Home from './pages/Home';
-import Headphones from './pages/Headphones';
-// import Speakers from './pages/Speakers';
-// import Earphones from './pages/Earphones';
-import Footer from './components/section/Footer';
+import Header from "./components/section/Header";
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Footer from "./components/section/Footer";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
     <React.Fragment>
       <Header />
       <Home />
-      <Headphones />
-      {/* <Speakers />
-      <Earphones /> */}
+      <Category />
+      <ProductDetail />
       <Footer />
     </React.Fragment>
   );

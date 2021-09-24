@@ -1,0 +1,267 @@
+.section {
+  margin-top: 9.6rem;
+}
+
+.section__content {
+  padding: 1.2rem;
+  margin: 0 auto;
+  width: 111rem;
+
+  display: grid;
+  row-gap: 9.6rem;
+}
+
+.productcard {
+  max-width: 111rem;
+  padding: 1.2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.4rem;
+}
+
+.productcard__image {
+  width: 100%;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.productcard__content {
+  width: 44.5rem;
+  height: min-content;
+  margin: auto 0 auto auto;
+}
+
+.productcard__content span {
+  display: inline-block;
+  font-size: 1.4rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: hsl(22, 65%, 57%);
+
+  margin-bottom: 2.4rem;
+}
+
+.productcard__title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.05;
+
+  margin-bottom: 2.4rem;
+}
+
+.productcard__text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: hsl(0, 0%, 20%);
+
+  margin-bottom: 3.2rem;
+}
+
+.productcard__price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  margin-bottom: 2.4rem;
+}
+
+.productcard__form {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.productcard__form input {
+  /* CREATE CUSTOM LATER */
+  width: 12rem;
+  padding: 1.5rem 3.5rem;
+}
+
+/* ****************************** */
+.productcard__link:link,
+.productcard__link:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-color: hsl(22, 65%, 57%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.productcard__link:hover,
+.productcard__link:active {
+  background-color: #fbaf85;
+}
+
+.productcard__link:focus {
+  outline-offset: 5px;
+  outline: 3px solid hsl(22, 65%, 57%);
+}
+
+/* ****************************** */
+/* FEATURES */
+.section-features {
+  max-width: 111rem;
+  padding: 1.2rem;
+  margin: 9.6rem auto 0;
+
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 6.4rem;
+}
+
+.features__col-1 {
+  max-width: 63.5rem;
+}
+
+.features__col-2 {
+  max-width: 35rem;
+}
+
+.features__heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  margin-bottom: 2.4rem;
+}
+
+.features__features {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: hsl(0, 0%, 50%);
+}
+
+.features__includes {
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: hsl(0, 0%, 20%);
+
+  text-align: center;
+}
+
+.features__includes li {
+  display: flex;
+  gap: 2.4rem;
+
+  margin-bottom: 0.8rem;
+}
+
+.features__quantity {
+  font-weight: 700;
+  color: hsl(22, 65%, 57%);
+}
+
+.features__item {
+}
+/* ****************************** */
+/* GALLERY */
+.section-gallery {
+  margin-top: 9.6rem;
+}
+
+.gallery__content {
+  max-width: 111rem;
+  height: 59.2rem;
+  padding: 0 1.2rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3.2rem;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.gallery__first {
+  grid-column: 1 / span 1;
+  border-radius: 6px;
+}
+
+.gallery__second {
+  grid-column: 1 / span 1;
+  border-radius: 6px;
+}
+
+.gallery__third {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  border-radius: 6px;
+}
+
+/* ****************************** */
+/* OTHERS */
+
+.section--others {
+  margin-top: 9.6rem;
+}
+
+.others__content {
+  max-width: 111rem;
+  padding: 0 1.2rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.others__card {
+  width: 35rem;
+  height: 47.1rem;
+}
+
+.others__image {
+  width: 35rem;
+  height: 31.8rem;
+  margin-bottom: 3.2rem;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card__content {
+  text-align: center;
+}
+
+.others__name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  margin-bottom: 3.2rem;
+}
+
+.others__link:link,
+.others__link:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-color: hsl(22, 65%, 57%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.others__link:hover,
+.others__link:active {
+  background-color: #fbaf85;
+}
+
+.others__link:focus {
+  outline-offset: 5px;
+  outline: 3px solid hsl(22, 65%, 57%);
+}
