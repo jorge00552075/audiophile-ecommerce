@@ -1,9 +1,10 @@
-import { ReactComponent as Logo } from '../../assets/shared/desktop/logo.svg';
-import { ReactComponent as Facebook } from '../../assets/shared/desktop/icon-facebook.svg';
-import { ReactComponent as Twitter } from '../../assets/shared/desktop/icon-twitter.svg';
-import { ReactComponent as Instagram } from '../../assets/shared/desktop/icon-instagram.svg';
+import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
+import { ReactComponent as Facebook } from "../../assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as Twitter } from "../../assets/shared/desktop/icon-twitter.svg";
+import { ReactComponent as Instagram } from "../../assets/shared/desktop/icon-instagram.svg";
 
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
 function Footer() {
   return (
@@ -12,18 +13,18 @@ function Footer() {
         <nav className={styles.footer__nav}>
           <Logo />
           <div>
-            <a href="/" className={styles.footer__link}>
+            <Link to="/" className={styles.footer__link}>
               HOME
-            </a>
-            <a href="/headphones" className={styles.footer__link}>
+            </Link>
+            <Link to="/headphones" className={styles.footer__link}>
               HEADPHONES
-            </a>
-            <a href="/speakers" className={styles.footer__link}>
+            </Link>
+            <Link to="/speakers" className={styles.footer__link}>
               SPEAKERS
-            </a>
-            <a href="/earphones" className={styles.footer__link}>
+            </Link>
+            <Link to="/earphones" className={styles.footer__link}>
               EARPHONES
-            </a>
+            </Link>
           </div>
         </nav>
         <div className={styles.footer__container}>
@@ -37,30 +38,30 @@ function Footer() {
             </p>
           </div>
           <div className={styles.footer__social}>
-            <a
-              href="https://www.facebook.com/"
+            <Link
+              to="https://www.facebook.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Facebook />
-            </a>
-            <a
-              href="https://twitter.com/"
+            </Link>
+            <Link
+              to="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Twitter />
-            </a>
-            <a
-              href="https://www.instagram.com/"
+            </Link>
+            <Link
+              to="https://www.instagram.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Instagram />
-            </a>
+            </Link>
           </div>
         </div>
         <p className={styles.footer__copyright}>

@@ -1,0 +1,65 @@
+main {
+  background-color: #cfcfcf;
+  min-height: 100vh;
+}
+/* ****************************** */
+.form {
+  max-width: 73rem;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  padding: 2.4rem;
+  margin: 9.6rem auto 0;
+}
+
+.form h1 {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form__section__billing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.4rem;
+}
+.form__section__shipping {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.4rem;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+.form__section__payment {
+  background-color: turquoise;
+}
+
+.form__section__title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(22, 65%, 57%);
+
+  margin-bottom: 2.4rem;
+}
+
+.form__group {
+  margin-bottom: 2.4rem;
+}
+
+.form__group label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  margin-bottom: 0.8rem;
+}
+
+.form__group input {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1.5rem 7.5rem;
+  border: 1px solid hsl(0, 0%, 81%);
+  border-radius: 6px;
+}

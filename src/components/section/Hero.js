@@ -1,7 +1,8 @@
-import React from 'react';
-import styles from './Hero.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Hero.module.css";
 
-import imageHero from '../../assets/home/desktop/image-hero.jpg';
+import imagehero from "../../images/desktop/image-hero.jpg";
 
 function Hero() {
   return (
@@ -9,7 +10,7 @@ function Hero() {
       <div className={styles.hero}>
         <div className={styles.hero__content}>
           <img
-            src={imageHero}
+            src={imagehero}
             alt="XX99 Mark II Headphones"
             className={styles.hero__image}
           />
@@ -20,9 +21,12 @@ function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <a href="xx99-headphones" className={styles.hero__btn}>
+            <Link
+              to="/product/xx99-mark-two-headphones"
+              className={styles.hero__btn}
+            >
               See product
-            </a>
+            </Link>
           </div>
           <div className={styles.hero__col_2}></div>
         </div>

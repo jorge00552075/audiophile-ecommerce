@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 // THUMBNAILS
-import headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
-import speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import headphones from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 
-import styles from './FeatureRow.module.css';
+import styles from "./FeatureRow.module.css";
 
 function FeatureRow() {
   return (
@@ -18,7 +19,7 @@ function FeatureRow() {
           />
           <div className={styles.feature__content}>
             <p>headphones</p>
-            <a href="/headphones" className={styles.feature__link}>
+            <Link to="/headphones" className={styles.feature__link}>
               shop
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -29,7 +30,7 @@ function FeatureRow() {
                   fillRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         {/* Speakers */}
@@ -41,7 +42,7 @@ function FeatureRow() {
           />
           <div className={styles.feature__content}>
             <p>speakers</p>
-            <a href="/speakers" className={styles.feature__link}>
+            <Link to="/speakers" className={styles.feature__link}>
               shop
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -52,7 +53,7 @@ function FeatureRow() {
                   fillRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         {/* Earphones */}
@@ -64,7 +65,7 @@ function FeatureRow() {
           />
           <div className={styles.feature__content}>
             <p>earphones</p>
-            <a href="/earphones" className={styles.feature__link}>
+            <Link to="/earphones" className={styles.feature__link}>
               shop
               <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -75,7 +76,7 @@ function FeatureRow() {
                   fillRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

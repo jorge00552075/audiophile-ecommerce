@@ -1,4 +1,5 @@
-import styles from '../../pages/Category.module.css';
+import { Link } from "react-router-dom";
+import styles from "../../pages/Category.module.css";
 
 function ProductCard({ data }) {
   return (
@@ -7,30 +8,36 @@ function ProductCard({ data }) {
         {!data.reversed ? (
           <article className={styles.productcard}>
             <img
-              src={data.image}
-              alt={data.alt}
+              src={data.image.desktop}
+              alt={data.name}
               className={styles.productcard__image}
             />
             <div className={styles.productcard__content}>
-              {data.newproduct && <span>new product</span>}
-              <h2 className={styles.productcard__title}>{data.title}</h2>
-              <p className={styles.productcard__text}>{data.text}</p>
-              <a href={data.href} className={styles.productcard__link}>
+              {data.new && <span>new product</span>}
+              <h2 className={styles.productcard__title}>{data.name}</h2>
+              <p className={styles.productcard__text}>{data.description}</p>
+              <Link
+                to={`${"/product/"}${data.slug}`}
+                className={styles.productcard__link}
+              >
                 see product
-              </a>
+              </Link>
             </div>
           </article>
         ) : (
           <article className={styles.productcard}>
             <div
-              className={`${styles.productcard__content} ${styles['m-auto-0']}`}
+              className={`${styles.productcard__content} ${styles["m-auto-0"]}`}
             >
               {data.new && <span>new product</span>}
               <h2 className={styles.productcard__title}>{data.title}</h2>
               <p className={styles.productcard__text}>{data.text}</p>
-              <a href={data.href} className={styles.productcard__link}>
+              <Link
+                to={`${"/product/"}${data.slug}`}
+                className={styles.productcard__link}
+              >
                 see product
-              </a>
+              </Link>
             </div>
             <img
               src={data.image}

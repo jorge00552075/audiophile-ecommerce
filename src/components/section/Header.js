@@ -1,6 +1,7 @@
-import styles from './Header.module.css';
-import { ReactComponent as Logo } from '../../assets/shared/desktop/logo.svg';
-import { ReactComponent as CartIcon } from '../../assets/shared/desktop/icon-cart.svg';
+import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
+import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
 
 function Header() {
   return (
@@ -8,18 +9,18 @@ function Header() {
       <div className={styles.header__content}>
         <Logo />
         <nav className={styles.header__nav}>
-          <a href="/" className={styles.header__link}>
+          <Link to="/" className={styles.header__link}>
             HOME
-          </a>
-          <a href="/headphones" className={styles.header__link}>
+          </Link>
+          <Link to="/headphones" className={styles.header__link}>
             HEADPHONES
-          </a>
-          <a href="/speakers" className={styles.header__link}>
+          </Link>
+          <Link to="/speakers" className={styles.header__link}>
             SPEAKERS
-          </a>
-          <a href="/earphones" className={styles.header__link}>
+          </Link>
+          <Link to="/earphones" className={styles.header__link}>
             EARPHONES
-          </a>
+          </Link>
         </nav>
         <button className={styles.header__btn}>
           <CartIcon />

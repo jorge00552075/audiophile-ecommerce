@@ -81,10 +81,11 @@
 }
 
 /* ****************************** */
-.productcard__link:link,
-.productcard__link:visited {
-  display: inline-block;
-  text-decoration: none;
+.productcard__link {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+
   background-color: hsl(22, 65%, 57%);
   color: hsl(0, 0%, 100%);
   font-size: 1.3rem;

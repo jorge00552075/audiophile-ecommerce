@@ -1,17 +1,26 @@
+import { useState, useEffect, useLayoutEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import dataJson from "../data.json";
 import FeatureRow from "../components/section/FeatureRow";
 import About from "../components/section/About";
 import styles from "./ProductDetail.module.css";
-import marktwoheadphones from "../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-
-import image01 from "../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
-import image02 from "../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
-import image03 from "../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
-
-import image001 from "../assets/shared/desktop/image-xx99-mark-one-headphones.jpg";
-import image002 from "../assets/shared/desktop/image-xx59-headphones.jpg";
-import image003 from "../assets/shared/desktop/image-zx9-speaker.jpg";
 
 function ProductDetail() {
+  const [data, setData] = useState(null);
+  let location = useLocation();
+  const productid = location.pathname.split("/");
+
+  useEffect(() => {
+    const product = dataJson.filter((item) => item.slug === productid[2]);
+    setData(product[0]);
+  }, [location.pathname, productid]);
+
+  useLayoutEffect(() => window.scrollTo(0, 0));
+
+  if (data === null) {
+    return <h1>NO DATA</h1>;
+  }
+
   return (
     <main>
       {/* PRODUCT CARD */}
@@ -19,36 +28,30 @@ function ProductDetail() {
         <div className={styles.section__content}>
           <article className={styles.productcard}>
             <img
-              src={marktwoheadphones}
-              alt="Mark Two headphones"
+              src={data.image.desktop}
+              alt={data.image.name}
               className={styles.productcard__image}
             />
             <div className={styles.productcard__content}>
-              <span>new product</span>
-              <h1 className={styles.productcard__title}>
-                xx99 mark ii headphones
-              </h1>
-              <p className={styles.productcard__text}>
-                The new XX99 Mark II headphones is the pinnacle of pristine
-                audio. It redefines your premium headphone experience by
-                reproducing the balanced depth and precision of studio-quality
-                sound.
-              </p>
-              <p className={styles.productcard__price}>$ 2,999</p>
+              {data.new && <span>new product</span>}
+              <h1 className={styles.productcard__title}>{data.name}</h1>
+              <p className={styles.productcard__text}>{data.description}</p>
+              <p className={styles.productcard__price}>$ {data.price}</p>
               <form className={styles.productcard__form}>
                 <input
                   type="number"
                   id="number"
                   min="0"
                   value="1"
-                  onChange={() => console.log()}
+                  onChange={() => console.log("ADD 1")}
                 />
-                <a
-                  href="/marktwoheadphones"
+                <button
+                  type="submit"
                   className={styles.productcard__link}
+                  onClick={() => console.log("ADD TO CART")}
                 >
                   add to cart
-                </a>
+                </button>
               </form>
             </div>
           </article>
@@ -59,103 +62,71 @@ function ProductDetail() {
       <section className={styles["section-features"]}>
         <div className={styles["features__col-1"]}>
           <h2 className={styles.features__heading}>features</h2>
-          <p className={styles.features__features}>
-            Featuring a genuine leather head strap and premium earcups, these
-            headphones deliver superior comfort for those who like to enjoy
-            endless listening. It includes intuitive controls designed for any
-            situation. Whether you’re taking a business call or just in your own
-            personal space, the auto on/off and pause features ensure that
-            you’ll never miss a beat.
-            <br />
-            <br />
-            The advanced Active Noise Cancellation with built-in equalizer allow
-            you to experience your audio world on your terms. It lets you enjoy
-            your audio in peace, but quickly interact with your surroundings
-            when you need to. Combined with Bluetooth 5. 0 compliant
-            connectivity and 17 hour battery life, the XX99 Mark II headphones
-            gives you superior sound, cutting-edge technology, and a modern
-            design aesthetic.
-          </p>
+          <p className={styles.features__features}>{data.features}</p>
         </div>
         <div className={styles["features__col-2"]}>
           <h2 className={styles.features__heading}>in the box</h2>
           {/* prettier-ignore */}
           <ul className={styles.features__includes}>
-            <li>
-              <span className={styles.features__quantity}>{`${1} ${"x"}`}</span>
-              <span className={styles.features__item}>Headphone Unit</span>
-            </li>
-            <li>
-              <span className={styles.features__quantity}>{`${2} ${"x"}`}</span>
-              <span className={styles.features__item}>Replacement Earcups</span>
-            </li>
-            <li>
-              <span className={styles.features__quantity}>{`${1} ${"x"}`}</span>
-              <span className={styles.features__item}>User Manual</span>
-            </li>
-            <li>
-              <span className={styles.features__quantity}>{`${1} ${"x"}`}</span>
-              <span className={styles.features__item}>3.5mm 5m audio cable</span>
-            </li>
-            <li>
-              <span className={styles.features__quantity}>{`${1} ${"x"}`}</span>
-              <span className={styles.features__item}>Travel Bag</span>
-            </li>
+            {data.includes.map((item, i) => {
+              return (
+                <li key={Math.trunc(Math.random() * 1000)}>
+                  <span className={styles.features__quantity}>{`${data.includes[i].quantity} ${"x"}`}</span>
+                  <span className={styles.features__item}>{data.includes[i].item}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
 
       {/* GALLERY */}
       <section className={styles["section-gallery"]}>
-        {/* prettier-ignore */}
         <div className={styles.gallery__content}>
-          <img src={image01} alt="Man listening to music" className={styles.gallery__first} />
-          <img src={image02} alt="Items on table" className={styles.gallery__second} />
-          <img src={image03} alt="XX99 Mark II Headphones" className={styles.gallery__third} />
+          <img
+            src={data.gallery.first.desktop}
+            alt={data.name}
+            className={styles.gallery__first}
+          />
+          <img
+            src={data.gallery.second.desktop}
+            alt={data.name}
+            className={styles.gallery__second}
+          />
+          <img
+            src={data.gallery.third.desktop}
+            alt={data.name}
+            className={styles.gallery__third}
+          />
         </div>
       </section>
 
-      {/* OTHER */}
+      {/* OTHERS */}
       <section className={styles["section--others"]}>
         <div className={styles.others__content}>
-          <div className={styles.others__card}>
-            <img
-              src={image001}
-              alt="XX99 Mark I"
-              className={styles.others__image}
-            />
-            <div className={styles.card__content}>
-              <p className={styles.others__name}>XX99 Mark I</p>
-              <a
-                href="/xx99-mark-one-headphones"
-                className={styles.others__link}
+          {data.others.map((other, i) => {
+            return (
+              <div
+                className={styles.others__card}
+                key={Math.trunc(Math.random() * 1000)}
               >
-                see product
-              </a>
-            </div>
-          </div>
-          <div className={styles.others__card}>
-            <img src={image002} alt="XX59" className={styles.others__image} />
-            <div className={styles.card__content}>
-              <p className={styles.others__name}>XX59</p>
-              <a href="/xx59-headphones" className={styles.others__link}>
-                see product
-              </a>
-            </div>
-          </div>
-          <div className={styles.others__card}>
-            <img
-              src={image003}
-              alt="XX99 Mark I"
-              className={styles.others__image}
-            />
-            <div className={styles.card__content}>
-              <p className={styles.others__name}>XX99 Mark I</p>
-              <a href="/zx9-speaker" className={styles.others__link}>
-                see product
-              </a>
-            </div>
-          </div>
+                <img
+                  src={data.others[i].image.desktop}
+                  alt={data.others[i].name}
+                  className={styles.others__image}
+                />
+                <div className={styles.card__content}>
+                  <p className={styles.others__name}>{data.others[i].name}</p>
+                  <Link
+                    to={`${"/product/"}${data.others[i].slug}`}
+                    className={styles.others__link}
+                  >
+                    see product
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
