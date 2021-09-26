@@ -1,9 +1,4 @@
 import { Link } from "react-router-dom";
-// THUMBNAILS
-import headphones from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import earphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
-
 import styles from "./FeatureRow.module.css";
 
 function FeatureRow() {
@@ -13,7 +8,7 @@ function FeatureRow() {
         {/* Headphones */}
         <div className={styles.feature__card}>
           <img
-            src={headphones}
+            src="../assets/shared/desktop/image-category-thumbnail-headphones.png"
             alt="headphones-thumbnail"
             className={styles.feature__image}
           />
@@ -36,7 +31,7 @@ function FeatureRow() {
         {/* Speakers */}
         <div className={styles.feature__card}>
           <img
-            src={speakers}
+            src="../assets/shared/desktop/image-category-thumbnail-speakers.png"
             alt="speakers-thumbnail"
             className={styles.feature__image}
           />
@@ -59,7 +54,7 @@ function FeatureRow() {
         {/* Earphones */}
         <div className={styles.feature__card}>
           <img
-            src={earphones}
+            src="../assets/shared/desktop/image-category-thumbnail-earphones.png"
             alt="earphones-thumbnail"
             className={styles.feature__image}
           />

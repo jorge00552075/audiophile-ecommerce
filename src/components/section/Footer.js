@@ -38,30 +38,30 @@ function Footer() {
             </p>
           </div>
           <div className={styles.footer__social}>
-            <Link
-              to="https://www.facebook.com/"
+            <a
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Facebook />
-            </Link>
-            <Link
-              to="https://twitter.com/"
+            </a>
+            <a
+              href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Twitter />
-            </Link>
-            <Link
-              to="https://www.instagram.com/"
+            </a>
+            <a
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noreferrer"
               className={styles.social__link}
             >
               <Instagram />
-            </Link>
+            </a>
           </div>
         </div>
         <p className={styles.footer__copyright}>

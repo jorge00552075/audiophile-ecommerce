@@ -1,5 +1,4 @@
-import styles from './About.module.css';
-import aboutimage from '../../assets/shared/desktop/image-best-gear.jpg';
+import styles from "./About.module.css";
 
 function About() {
   return (
@@ -23,7 +22,7 @@ function About() {
         </div>
         <div>
           <img
-            src={aboutimage}
+            src="../assets/shared/desktop/image-best-gear.jpg"
             alt="Man listening to music on headphones"
             className={styles.about__image}
           />

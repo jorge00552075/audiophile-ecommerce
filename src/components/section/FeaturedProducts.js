@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./FeaturedProducts.module.css";
 
-import circles from "../../images/desktop/pattern-circles.svg";
-
-import speakerzx9 from "../../images/desktop/image-speaker-zx9.png";
-import speakerzx7 from "../../images/desktop/image-speaker-zx7.jpg";
-import earphones from "../../images/desktop/image-earphones-yx1.jpg";
+import circles from "../../assets/home/desktop/pattern-circles.svg";
+import speakerzx9 from "../../assets/home/desktop/image-speaker-zx9.png";
+import speakerzx7 from "../../assets/home/desktop/image-speaker-zx7.jpg";
+import earphones from "../../assets/home/desktop/image-earphones-yx1.jpg";
 
 function FeaturedProducts() {
   return (

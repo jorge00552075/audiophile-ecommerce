@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
-import imagehero from "../../images/desktop/image-hero.jpg";
+import imageHero from "../../assets/home/desktop/image-hero.jpg";
 
 function Hero() {
   return (
@@ -10,7 +10,7 @@ function Hero() {
       <div className={styles.hero}>
         <div className={styles.hero__content}>
           <img
-            src={imagehero}
+            src={imageHero}
             alt="XX99 Mark II Headphones"
             className={styles.hero__image}
           />

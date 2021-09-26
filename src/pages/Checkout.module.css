@@ -1,28 +1,42 @@
-main {
-  background-color: #cfcfcf;
-  min-height: 100vh;
+body {
+  background-color: hsl(0, 0%, 95%);
+  height: 100vh;
 }
+
 /* ****************************** */
+.checkout__wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4rem;
+  max-width: 111rem;
+  margin: 0 auto;
+}
+
 .form {
-  max-width: 73rem;
+  width: 73rem;
+  margin: 9.6rem auto 0;
+  padding: 4.8rem;
+  border-radius: 10px;
   background-color: hsl(0, 0%, 100%);
   color: hsl(0, 0%, 0%);
-  padding: 2.4rem;
-  margin: 9.6rem auto 0;
 }
 
 .form h1 {
   font-size: 3.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 4.8rem;
 }
 
-.form__section__billing {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2.4rem;
+.form__section__title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(22, 65%, 57%);
+  margin-bottom: 2.4rem;
 }
-.form__section__shipping {
+
+.form__section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2.4rem;
@@ -31,35 +45,58 @@ main {
 .col-span-full {
   grid-column: 1 / -1;
 }
-.form__section__payment {
-  background-color: turquoise;
-}
-
-.form__section__title {
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: hsl(22, 65%, 57%);
-
-  margin-bottom: 2.4rem;
-}
 
 .form__group {
   margin-bottom: 2.4rem;
 }
 
-.form__group label {
+.form__group label,
+.form__section label {
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
-
   margin-bottom: 0.8rem;
 }
 
 .form__group input {
   width: 100%;
   font-size: 1.4rem;
-  padding: 1.5rem 7.5rem;
+  font-family: inherit;
+  padding: 1.5rem 3rem;
   border: 1px solid hsl(0, 0%, 81%);
   border-radius: 6px;
+}
+
+.form__group input:focus {
+  outline-offset: 5px;
+  outline: 3px solid hsl(22, 65%, 57%);
+}
+
+.form__group--radio {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border: 2px solid hsl(22, 65%, 57%);
+  border-radius: 6px;
+  margin-bottom: 2.4rem;
+}
+
+.form__group--radio label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.form__group__cash {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: hsl(0, 0%, 50%);
+
+  display: grid;
+  grid-template-columns: 10fr 90fr;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 3.2rem;
 }
