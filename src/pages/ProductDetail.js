@@ -1,21 +1,40 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+// prettier-ignore
+import { useState, useEffect, useContext, useRef, useLayoutEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import dataJson from "../data.json";
 import FeatureRow from "../components/section/FeatureRow";
 import About from "../components/section/About";
 import styles from "./ProductDetail.module.css";
+import dataJson from "../data.json";
+import CartContext from "../context/cart-context";
 
 function ProductDetail() {
+  // HOOKS
   const [data, setData] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+
   let location = useLocation();
-  const productid = location.pathname.split("/");
 
   useEffect(() => {
+    const productid = location.pathname.split("/");
     const product = dataJson.filter((item) => item.slug === productid[2]);
     setData(product[0]);
-  }, [location.pathname, productid]);
+  }, [location.pathname]);
+
+  const context = useContext(CartContext);
+  const inputEl = useRef(null);
 
   useLayoutEffect(() => window.scrollTo(0, 0));
+
+  // EVENT HANDLERS
+  function changeCartHandler() {
+    setQuantity(inputEl.current.value);
+  }
+
+  function addToCartHandler(e) {
+    e.preventDefault();
+    // prettier-ignore
+    context.addItem({ name: data.name, price: data.price, quantity: +quantity });
+  }
 
   if (data === null) {
     return <h1>NO DATA</h1>;
@@ -42,13 +61,14 @@ function ProductDetail() {
                   type="number"
                   id="number"
                   min="0"
-                  value="1"
-                  onChange={() => console.log("ADD 1")}
+                  value={quantity}
+                  ref={inputEl}
+                  onChange={changeCartHandler}
                 />
                 <button
                   type="submit"
                   className={styles.productcard__link}
-                  onClick={() => console.log("ADD TO CART")}
+                  onClick={addToCartHandler}
                 >
                   add to cart
                 </button>
@@ -57,7 +77,6 @@ function ProductDetail() {
           </article>
         </div>
       </section>
-
       {/* FEATURES */}
       <section className={styles["section-features"]}>
         <div className={styles["features__col-1"]}>
@@ -79,7 +98,6 @@ function ProductDetail() {
           </ul>
         </div>
       </section>
-
       {/* GALLERY */}
       <section className={styles["section-gallery"]}>
         <div className={styles.gallery__content}>
@@ -100,7 +118,6 @@ function ProductDetail() {
           />
         </div>
       </section>
-
       {/* OTHERS */}
       <section className={styles["section--others"]}>
         <div className={styles.others__content}>
@@ -129,7 +146,6 @@ function ProductDetail() {
           })}
         </div>
       </section>
-
       <FeatureRow />
       <About />
     </main>

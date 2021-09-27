@@ -4,21 +4,23 @@ body {
 }
 
 /* ****************************** */
-.checkout__wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.4rem;
-  max-width: 111rem;
-  margin: 0 auto;
-}
 
 .form {
-  width: 73rem;
+  max-width: 111rem;
   margin: 9.6rem auto 0;
-  padding: 4.8rem;
-  border-radius: 10px;
-  background-color: hsl(0, 0%, 100%);
   color: hsl(0, 0%, 0%);
+
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  align-items: start;
+  justify-items: center;
+}
+
+.form__content {
+  width: 73rem;
+  padding: 3.2rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 6px;
 }
 
 .form h1 {
@@ -72,16 +74,17 @@ body {
   outline: 3px solid hsl(22, 65%, 57%);
 }
 
-.form__group--radio {
-  display: flex;
-  align-items: center;
+.form__group__radio {
   padding: 1.5rem 3rem;
   border: 2px solid hsl(22, 65%, 57%);
   border-radius: 6px;
   margin-bottom: 2.4rem;
+
+  display: flex;
+  align-items: center;
 }
 
-.form__group--radio label {
+.form__group__radio label {
   font-size: 1.4rem;
   font-weight: 700;
   margin-left: 1.2rem;

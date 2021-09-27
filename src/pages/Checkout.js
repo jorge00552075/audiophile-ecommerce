@@ -16,8 +16,8 @@ function Checkout() {
 
   return (
     <main>
-      <div className={styles.checkout__wrapper}>
-        <form className={styles.form} onSubmit={onSubmitHandler}>
+      <form className={styles.form} onSubmit={onSubmitHandler}>
+        <div className={styles.form__content}>
           <h1>checkout</h1>
           <h2 className={styles.form__section__title}>billing details</h2>
           <div className={styles.form__section}>
@@ -49,7 +49,6 @@ function Checkout() {
               />
             </div>
           </div>
-          {/* SHIPPING */}
           <h2 className={styles.form__section__title}>shipping info</h2>
           <div className={styles.form__section}>
             <div className={`${styles.form__group} ${styles["col-span-full"]}`}>
@@ -89,21 +88,19 @@ function Checkout() {
               />
             </div>
           </div>
-          {/* PAYMENT */}
           <h2 className={styles.form__section__title}>payment details</h2>
           <div className={styles.form__section}>
             <label htmlFor="payment">Payment Method</label>
             <div>
-              <div className={styles["form__group--radio"]}>
+              <div className={styles.form__group__radio}>
                 <input type="radio" name="payment" id="payment" />
                 <label htmlFor="payment">e-Money</label>
               </div>
-              <div className={styles["form__group--radio"]}>
+              <div className={styles.form__group__radio}>
                 <input type="radio" name="payment" id="payment" />
                 <label htmlFor="payment">Cash on Delivery</label>
               </div>
             </div>
-            {/* SHOW CASH ON DELIVERY INSTRUCTIONS */}
             {showInstructions ? (
               <div className={styles.form__group__cash}>
                 <Cashicon />
@@ -117,7 +114,7 @@ function Checkout() {
             ) : (
               <React.Fragment>
                 <div className={styles.form__group}>
-                  <label htmlFor="">e-Money Number</label>
+                  <label htmlFor="e-number">e-Money Number</label>
                   <input
                     type="number"
                     name="e-number"
@@ -127,22 +124,21 @@ function Checkout() {
                 </div>
                 <div>
                   <div className={styles.form__group}>
-                    <label htmlFor="">e-Money PIN</label>
-                    {/* prettier-ignore */}
-                    <input 
-                type="number" 
-                name="e-pin" 
-                id="e-pin" 
-                placeholder="6891" 
-                />
+                    <label htmlFor="e-pin">e-Money PIN</label>
+                    <input
+                      type="number"
+                      name="e-pin"
+                      id="e-pin"
+                      placeholder="6891"
+                    />
                   </div>
                 </div>
               </React.Fragment>
             )}
           </div>
-        </form>
+        </div>
         <Summary />
-      </div>
+      </form>
     </main>
   );
 }
