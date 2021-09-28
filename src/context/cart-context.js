@@ -6,18 +6,16 @@ const CartContext = React.createContext({
   removeItem: () => {},
 });
 
-const INITIAL_STATE = [
-  { name: "YX1 Wireless Earphones", price: 599, quantity: 1 },
-  { name: "XX59 Headphones", price: 899, quantity: 1 },
-  { name: "XX99 Mark I Headphones", price: 1750, quantity: 1 },
-];
+const ACTIONS = {
+  ADD_ITEM: "ADD_ITEM",
+  REMOVE_ITEM: "REMOVE_ITEM",
+};
 
 function reducer(state, action) {
-  console.log(state);
-  if (action.type === "ADD_ITEM") {
-    let newState1 = [...state];
-    if (newState1.find((item) => item.name === action.payload.name)) {
-      return state.map((item) => {
+  if (action.type === ACTIONS.ADD_ITEM) {
+    let newState = [...state];
+    if (newState.find((item) => item.name === action.payload.name)) {
+      return newState.map((item) => {
         if (item.name === action.payload.name) {
           return { ...item, quantity: item.quantity + action.payload.quantity };
         } else {
@@ -25,28 +23,42 @@ function reducer(state, action) {
         }
       });
     } else {
-      newState1.push({
-        name: action.payload.name,
-        price: action.payload.price,
-        quantity: action.payload.quantity,
-      });
+      return [
+        ...newState,
+        {
+          name: action.payload.name,
+          price: action.payload.price,
+          quantity: action.payload.quantity,
+          image: action.payload.image,
+        },
+      ];
     }
   }
+
+  if (action.type === ACTIONS.REMOVE_ITEM) {
+    // ...
+  }
+
   return state;
 }
 
 export function CartContextProvider(props) {
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(reducer, []);
 
   function addItemHandler(item) {
     dispatch({
-      type: "ADD_ITEM",
-      payload: { name: item.name, price: item.price, quantity: item.quantity },
+      type: ACTIONS.ADD_ITEM,
+      payload: {
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+        image: item.image,
+      },
     });
   }
 
   function removeItemHandler() {
-    dispatch({ type: "REMOVE_ITEM" });
+    dispatch({ type: ACTIONS.REMOVE_ITEM });
   }
 
   return (

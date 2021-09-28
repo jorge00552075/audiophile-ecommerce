@@ -8,6 +8,7 @@ import styles from "./Header.module.css";
 function Header() {
   // DELETE CONTEXT LATER NOT NEEDED !
   const context = useContext(CartContext);
+  const total = context.cart.length;
 
   return (
     <header className={styles.header}>
@@ -27,12 +28,13 @@ function Header() {
             EARPHONES
           </Link>
         </nav>
-        <button className={styles.header__btn}>
-          <CartIcon />
-          {context.cart.reduce((acc, current, i) => {
-            return acc + current.quantity;
-          }, 0)}
-        </button>
+        <div className={styles.cart__box}>
+          {/* prettier-ignore */}
+          <Link to={total ? "/item/item/checkout" : "#"} className={styles.header__btn}>
+            <CartIcon/>
+          </Link>
+          <span>{context.cart.reduce((t, i) => t + i.quantity, 0)}</span>
+        </div>
       </div>
     </header>
   );

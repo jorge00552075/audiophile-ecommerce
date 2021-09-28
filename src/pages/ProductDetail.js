@@ -33,7 +33,7 @@ function ProductDetail() {
   function addToCartHandler(e) {
     e.preventDefault();
     // prettier-ignore
-    context.addItem({ name: data.name, price: data.price, quantity: +quantity });
+    context.addItem({ name: data.name, price: data.price, quantity: +quantity, image: data.image.mobile });
   }
 
   if (data === null) {
