@@ -26,6 +26,7 @@ function reducer(state, action) {
       return [
         ...newState,
         {
+          id: action.payload.id,
           name: action.payload.name,
           price: action.payload.price,
           quantity: action.payload.quantity,
@@ -49,6 +50,7 @@ export function CartContextProvider(props) {
     dispatch({
       type: ACTIONS.ADD_ITEM,
       payload: {
+        id: item.id,
         name: item.name,
         price: item.price,
         quantity: item.quantity,
@@ -57,7 +59,7 @@ export function CartContextProvider(props) {
     });
   }
 
-  function removeItemHandler() {
+  function removeItemHandler(item) {
     dispatch({ type: ACTIONS.REMOVE_ITEM });
   }
 

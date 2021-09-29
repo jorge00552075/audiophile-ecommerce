@@ -19,7 +19,7 @@
   overflow: hidden;
   background-color: hsl(0, 0%, 100%);
   padding: 3.6rem;
-  border-radius: 6px;
+  border-radius: 1rem;
 }
 
 .modal__checkmark {
@@ -48,7 +48,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 14rem;
-  border-radius: 6px;
+  border-radius: 1rem;
   overflow: hidden;
 
   margin-bottom: 3.2rem;

@@ -4,11 +4,10 @@
   color: hsl(0, 0%, 100%);
 }
 
-.pagetitle__text {
+.pagetitle__title {
   font-size: 4rem;
   font-weight: 700;
   text-transform: uppercase;
-
   text-align: center;
-  transform: translateY(152%);
+  transform: translateY(150%);
 }

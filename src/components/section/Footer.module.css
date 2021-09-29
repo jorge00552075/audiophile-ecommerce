@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.footer__nav div {
+.nav__links {
   width: 40.3rem;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,6 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
-
   align-items: center;
 }
 

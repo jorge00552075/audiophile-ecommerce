@@ -18,7 +18,7 @@
   background-color: hsl(22, 65%, 57%);
   grid-column: 1 / span 2;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .pattern-circles {
@@ -62,10 +62,6 @@
   text-transform: uppercase;
 
   margin-bottom: 2.4rem;
-}
-
-.text-red {
-  color: red;
 }
 
 .featured__text {
@@ -124,7 +120,7 @@
   grid-column: 1 / span 2;
 
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .featured__row-2 .featured__content {
@@ -143,7 +139,7 @@
   grid-column: 1 / span 1;
 
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .featured__row-4 {
@@ -151,7 +147,7 @@
   grid-column: 2 / span 1;
 
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .featured__row-4 .featured__content {

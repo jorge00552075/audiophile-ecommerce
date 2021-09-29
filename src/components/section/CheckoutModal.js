@@ -11,13 +11,16 @@ function Backdrop(props) {
 
 function ModalOverylay(props) {
   const context = useContext(CartContext);
-
-  const totalItems = context.cart.reduce((t, i) => t + i.quantity, 0);
-  const total = context.cart.reduce((t, i) => t + i.price * i.quantity, 0);
-  const vat = Math.round(
-    context.cart.reduce((t, i) => t + i.price * i.quantity, 0) * 0.05
+  const totalItems = context.cart.reduce(
+    (total, item) => total + item.quantity,
+    0
   );
-  const grandTotal = total + vat;
+  const totalPrice = context.cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+  const vat = totalPrice * 0.05;
+  const grandTotal = totalPrice + vat;
 
   // prettier-ignore
   return (

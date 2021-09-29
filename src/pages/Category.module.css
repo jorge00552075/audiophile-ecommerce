@@ -1,3 +1,9 @@
+.error {
+  font-size: 3.6rem;
+  text-align: center;
+  color: hsl(22, 65%, 57%);
+}
+
 .section {
   margin-top: 9.6rem;
 }
@@ -6,7 +12,6 @@
   padding: 1.2rem;
   margin: 0 auto;
   width: 111rem;
-
   display: grid;
   row-gap: 9.6rem;
 }
@@ -14,7 +19,6 @@
 .productcard {
   max-width: 111rem;
   padding: 1.2rem;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2.4rem;
@@ -22,7 +26,7 @@
 
 .productcard__image {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 1rem;
 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

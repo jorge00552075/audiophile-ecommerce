@@ -11,8 +11,8 @@ function Checkout() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  function onSubmitHandler(event) {
-    event.preventDefault();
+  function onSubmitHandler(e) {
+    e.preventDefault();
     setShowModal(true);
   }
 
@@ -20,7 +20,7 @@ function Checkout() {
     <React.Fragment>
       {showModal && <CheckoutModal />}
       <main>
-        <form className={styles.form} onSubmit={onSubmitHandler}>
+        <form className={styles.form} onClick={onSubmitHandler}>
           <div className={styles.form__content}>
             <h1>checkout</h1>
             <h2 className={styles.form__section__title}>billing details</h2>
@@ -143,7 +143,7 @@ function Checkout() {
               )}
             </div>
           </div>
-          <Summary onSubmit={onSubmitHandler} />
+          <Summary />
         </form>
       </main>
     </React.Fragment>

@@ -28,7 +28,6 @@
 .about__text {
   font-size: 1.5rem;
   line-height: 1.7;
-
   color: hsl(0, 0%, 50%);
 }
 
@@ -39,5 +38,5 @@
 }
 
 .about__image {
-  border-radius: 10px;
+  border-radius: 1rem;
 }

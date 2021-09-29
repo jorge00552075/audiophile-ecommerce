@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 import styles from "./FeaturedProducts.module.css";
 
-import circles from "../../assets/home/desktop/pattern-circles.svg";
-import speakerzx9 from "../../assets/home/desktop/image-speaker-zx9.png";
-import speakerzx7 from "../../assets/home/desktop/image-speaker-zx7.jpg";
-import earphones from "../../assets/home/desktop/image-earphones-yx1.jpg";
-
 function FeaturedProducts() {
   return (
     <section className={styles.featured}>
       <div className={styles["featured__grid-container"]}>
         <div className={styles["featured__row-1"]}>
           <img
-            src={circles}
+            src="../../assets/home/desktop/pattern-circles.svg"
             alt="pattern circles"
             className={styles["pattern-circles"]}
           />
           <img
-            src={speakerzx9}
+            src="../../assets/home/desktop/image-speaker-zx9.png"
             alt="ZX9 Speaker"
             className={styles.featured__image}
           />
@@ -44,14 +39,17 @@ function FeaturedProducts() {
             </Link>
           </div>
           <img
-            src={speakerzx7}
+            src="../../assets/home/desktop/image-speaker-zx7.jpg"
             alt="ZX7 Speaker"
             className={styles["featured__image--2"]}
           />
         </div>
 
         <div className={styles["featured__row-3"]}>
-          <img src={earphones} alt="YX1 Earphones" />
+          <img
+            src="../../assets/home/desktop/image-earphones-yx1.jpg"
+            alt="YX1 Earphones"
+          />
         </div>
         <div className={styles["featured__row-4"]}>
           <div className={styles.featured__content}>
