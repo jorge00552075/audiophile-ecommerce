@@ -4,11 +4,13 @@ const CartContext = React.createContext({
   cart: [],
   addItem: () => {},
   removeItem: () => {},
+  removeAll: () => {},
 });
 
 const ACTIONS = {
   ADD_ITEM: "ADD_ITEM",
   REMOVE_ITEM: "REMOVE_ITEM",
+  REMOVE_ALL: "REMOVE_ALL",
 };
 
 function reducer(state, action) {
@@ -37,7 +39,23 @@ function reducer(state, action) {
   }
 
   if (action.type === ACTIONS.REMOVE_ITEM) {
-    // ...
+    let newState = [...state];
+    // prettier-ignore
+    if (newState.find((item) => item.name === action.payload.name).quantity > 1) {
+      return newState.map((item) => {
+        if (item.name === action.payload.name) {
+          return { ...item, quantity: item.quantity - action.payload.quantity };
+        } else {
+          return item;
+        }
+      });
+    } else {
+      return newState.filter((item, i) => item.name !== action.payload.name);
+    }
+  }
+
+  if (action.type === ACTIONS.REMOVE_ALL) {
+    return [];
   }
 
   return state;
@@ -60,8 +78,13 @@ export function CartContextProvider(props) {
   }
 
   function removeItemHandler(item) {
-    dispatch({ type: ACTIONS.REMOVE_ITEM });
+    dispatch({
+      type: ACTIONS.REMOVE_ITEM,
+      payload: { name: item.name, quantity: item.quantity },
+    });
   }
+
+  const removeAllHandler = () => dispatch({ type: ACTIONS.REMOVE_ALL });
 
   return (
     <CartContext.Provider
@@ -69,6 +92,7 @@ export function CartContextProvider(props) {
         cart: state,
         addItem: addItemHandler,
         removeItem: removeItemHandler,
+        removeAll: removeAllHandler,
       }}
     >
       {props.children}

@@ -102,7 +102,7 @@ function ProductDetail() {
             <ul className={styles.features__includes}>
             {data.includes.map((item, i) => {
               return (
-                <li key={Math.trunc(Math.random() * 1000)}>
+                <li key={Math.trunc(Math.random() * 10000)}>
                   <span className={styles.features__quantity}>{`${data.includes[i].quantity} ${"x"}`}</span>
                   <span className={styles.features__item}>{data.includes[i].item}</span>
                 </li>
@@ -138,7 +138,7 @@ function ProductDetail() {
               return (
                 <div
                   className={styles.others__card}
-                  key={Math.trunc(Math.random() * 1000)}
+                  key={Math.trunc(Math.random() * 10000)}
                 >
                   <img
                     src={data.others[i].image.desktop}

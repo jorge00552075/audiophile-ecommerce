@@ -28,7 +28,7 @@ function Header() {
           </Link>
         </nav>
         {/* prettier-ignore */}
-        <Link to={total ? "/item/item/checkout" : "#"} className={styles.header__link}>
+        <Link to={total ? "/category/product/checkout" : "#"} className={styles.header__link}>
           <CartIcon/>
         </Link>
       </div>

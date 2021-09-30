@@ -17,7 +17,10 @@ function Summary(props) {
       <div>
         {context.cart.map((item, i) => {
           return (
-            <article key={i} className={styles.summary__item}>
+            <article
+              key={Math.trunc(Math.random() * 10000)}
+              className={styles.summary__item}
+            >
               <img
                 src={item.image}
                 alt={item.name}
@@ -54,7 +57,7 @@ function Summary(props) {
           <span>{`${"$"} ${grandTotal}`}</span>
         </div>
       </div>
-      <button type="submit" className={styles.btn}>
+      <button type="submit" className={styles.btn} onClick={props.handleSubmit}>
         continue & pay
       </button>
     </div>

@@ -18,29 +18,38 @@ function ModalOverylay(props) {
   );
   // SHOW MODAL
   const onClickHandler = () => props.toggleModal();
-  // ADD OR REMOVE ITEM
+  // ADD - REMOVE - REMOVE ALL ITEMS
   function changeCartHandler(e) {
     const item = context.cart.find((item, index) => item.id === +e.target.id);
-
-    context.addItem({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      quantity: 1,
-      image: item.image.mobile,
-    });
+    if (e.target.value > item.quantity) {
+      context.addItem({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        quantity: 1,
+        image: item.image.mobile,
+      });
+    } else {
+      context.removeItem({ name: item.name, quantity: 1 });
+    }
   }
+  const removeAllItems = () => context.removeAll();
 
   return (
     <div className={styles.cart__modal}>
       <div className={styles.box__1}>
         <span className={styles.total__items}>CART ({totalItems})</span>
-        <button className={styles["remove-all__btn"]}>Remove All</button>
+        <button className={styles["remove-all__btn"]} onClick={removeAllItems}>
+          Remove All
+        </button>
       </div>
       <div className={styles.cart__items__container}>
         {context.cart.map((item, i) => {
           return (
-            <div className={styles.cart__item} key={i}>
+            <div
+              className={styles.cart__item}
+              key={Math.trunc(Math.random() * 10000)}
+            >
               <img
                 src={item.image}
                 alt={item.name}
@@ -48,7 +57,7 @@ function ModalOverylay(props) {
               />
               <div className={styles.cart__item__info}>
                 <span className={styles.cart__item__name}>{item.name}</span>
-                <span className={styles.cart__item__price}>$ 2,999</span>
+                <span className={styles.cart__item__price}>$ {item.price}</span>
               </div>
               <form className={styles.cart__modal__form}>
                 <input
@@ -67,7 +76,7 @@ function ModalOverylay(props) {
           <span className={styles.cart__total}>$ {totalPrice}</span>
         </div>
         <Link
-          to="/item/item/checkout"
+          to="/category/product/checkout"
           className={styles.checkout__link}
           onClick={onClickHandler}
         >
@@ -79,11 +88,16 @@ function ModalOverylay(props) {
 }
 
 function CartModal(props) {
-  // prettier-ignore
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop onClose={props.onClose}/>, document.getElementById("backdrop-root"))}
-      {ReactDOM.createPortal(<ModalOverylay toggleModal={props.toggleModal}/>, document.getElementById("overlay-root"))}
+      {ReactDOM.createPortal(
+        <Backdrop onClose={props.onClose} />,
+        document.getElementById("backdrop-root")
+      )}
+      {ReactDOM.createPortal(
+        <ModalOverylay toggleModal={props.toggleModal} />,
+        document.getElementById("overlay-root")
+      )}
     </React.Fragment>
   );
 }

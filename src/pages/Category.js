@@ -22,13 +22,18 @@ function Category() {
   if (data === null) {
     return <h1 className={styles.error}>oops! Something went wrong! 😡</h1>;
   }
-  // prettier-ignore
+
   return (
     <main>
       <PageTitle title={title} />
       <section className={styles.section}>
         <div className={styles.section__content}>
-          {data.map((item, i) => <ProductCard data={data[i]} key={i} />)}
+          {data.map((item, i) => (
+            <ProductCard
+              data={data[i]}
+              key={Math.trunc(Math.random() * 10000)}
+            />
+          ))}
         </div>
       </section>
       <FeatureRow />

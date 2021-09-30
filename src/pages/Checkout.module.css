@@ -49,6 +49,7 @@ body {
 }
 
 .form__group {
+  position: relative;
   margin-bottom: 2.4rem;
 }
 
@@ -70,8 +71,9 @@ body {
 }
 
 .form__group input:focus {
-  outline-offset: 5px;
-  outline: 3px solid hsl(22, 65%, 57%);
+  /* outline-offset: 5px;
+  outline: 3px solid hsl(22, 65%, 57%); */
+  outline: none;
 }
 
 .form__group__radio {
@@ -102,4 +104,20 @@ body {
   grid-column: 1 / -1;
   align-items: center;
   gap: 3.2rem;
+}
+
+/* NEW */
+.error-text {
+  position: absolute;
+  top: 0rem;
+  right: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(0, 86%, 59%);
+}
+
+.invalid input {
+  border: 2px solid hsl(0, 86%, 59%);
+  /* outline-offset: 5px;
+  outline: 3px solid hsl(0, 86%, 59%); */
 }

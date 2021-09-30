@@ -1,38 +1,88 @@
 import React from "react";
 import { useState } from "react";
 import { ReactComponent as Cashicon } from "../../src/cash.svg";
-import styles from "./Checkout.module.css";
-
 import Summary from "../components/section/Summary";
 import CheckoutModal from "../components/section/CheckoutModal";
+import styles from "./Checkout.module.css";
 
 function Checkout() {
   // eslint-disable-next-line
   const [showInstructions, setShowInstructions] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  function onSubmitHandler(e) {
+  // FORM VALIDATION
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: null,
+    address: "",
+    zipcode: null,
+    city: "",
+    country: "",
+    enumber: null,
+    epin: null,
+  });
+
+  const [nameTouched, setNameTouched] = useState(false);
+  const nameValid = data.name.trim() !== "";
+  const nameInvalid = !nameValid && nameTouched;
+  let formValid = false;
+
+  if (nameValid) {
+    formValid = true;
+  }
+
+  // onChange
+  function handleChange(e) {
+    setData({ ...data, address: e.target.value });
+  }
+  console.log(data);
+  // onBlur
+  function handleBlur(e) {
+    setNameTouched(true);
+  }
+  // onSubmit
+  function handleSubmit(e) {
     e.preventDefault();
+
+    setNameTouched(true);
+    if (!nameValid) return;
+    // setName("");
+    setData.name("");
+
+    setNameTouched(false);
+
+    // CART MODAL
     setShowModal(true);
   }
+
+  const errorClasses = nameInvalid
+    ? `${styles.form__group} ${styles.invalid}`
+    : `${styles.form__group}`;
 
   return (
     <React.Fragment>
       {showModal && <CheckoutModal />}
       <main>
-        <form className={styles.form} onClick={onSubmitHandler}>
+        {/* FORM ONSUBMIT */}
+        <form className={styles.form}>
           <div className={styles.form__content}>
             <h1>checkout</h1>
             <h2 className={styles.form__section__title}>billing details</h2>
             <div className={styles.form__section}>
-              <div className={styles.form__group}>
+              <div className={errorClasses}>
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Jorge Sendejo Jr"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={data.name}
                 />
+                {nameInvalid && (
+                  <p className={styles["error-text"]}>NAME MUST NOT BE EMPTY</p>
+                )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="email">Email Address</label>
@@ -40,16 +90,16 @@ function Checkout() {
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Jorge00552075@Gmail.com"
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
-                <label htmlFor="telephone">Phone Number</label>
+                <label htmlFor="phone">Phone Number</label>
                 <input
                   type="tel"
-                  name="telephone"
-                  id="telephone"
-                  placeholder="202-555-0136"
+                  name="phone"
+                  id="phone"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -63,7 +113,7 @@ function Checkout() {
                   type="text"
                   name="address"
                   id="address"
-                  placeholder="1137 Williams Avenue"
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
@@ -72,7 +122,7 @@ function Checkout() {
                   type="number"
                   name="zipcode"
                   id="zipcode"
-                  placeholder="10001"
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
@@ -81,7 +131,7 @@ function Checkout() {
                   type="text"
                   name="city"
                   id="city"
-                  placeholder="New York City"
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
@@ -90,7 +140,7 @@ function Checkout() {
                   type="text"
                   name="country"
                   id="country"
-                  placeholder="United States"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -120,12 +170,12 @@ function Checkout() {
               ) : (
                 <React.Fragment>
                   <div className={styles.form__group}>
-                    <label htmlFor="e-number">e-Money Number</label>
+                    <label htmlFor="enumber">e-Money Number</label>
                     <input
                       type="number"
-                      name="e-number"
-                      id="e-number"
-                      placeholder="238521993"
+                      name="enumber"
+                      id="enumber"
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -133,9 +183,9 @@ function Checkout() {
                       <label htmlFor="e-pin">e-Money PIN</label>
                       <input
                         type="number"
-                        name="e-pin"
-                        id="e-pin"
-                        placeholder="6891"
+                        name="epin"
+                        id="epin"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -143,7 +193,7 @@ function Checkout() {
               )}
             </div>
           </div>
-          <Summary />
+          <Summary onSubmit={handleSubmit} />
         </form>
       </main>
     </React.Fragment>

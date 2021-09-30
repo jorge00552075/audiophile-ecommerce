@@ -15,7 +15,7 @@ function App() {
         <Home exact path="/" />
         <Category exact path="/:slug" />
         <ProductDetail path="/product/:slug" />
-        <Checkout exact path="/item/item/checkout" />
+        <Checkout exact path="/category/product/checkout" />
       </Switch>
       <Footer />
     </BrowserRouter>

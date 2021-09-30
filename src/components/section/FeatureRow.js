@@ -10,7 +10,10 @@ function FeatureRow() {
       <div className={styles.featurerow__content}>
         {categories.map((item, i) => {
           return (
-            <div className={styles.feature__card} key={i}>
+            <div
+              className={styles.feature__card}
+              key={Math.trunc(Math.random() * 10000)}
+            >
               <img
                 src={`../assets/shared/desktop/image-category-thumbnail-${item}.png`}
                 alt={`${item}-thumbnail`}
