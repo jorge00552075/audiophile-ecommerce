@@ -71,12 +71,11 @@ body {
 }
 
 .form__group input:focus {
-  /* outline-offset: 5px;
-  outline: 3px solid hsl(22, 65%, 57%); */
   outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
 }
 
-.form__group__radio {
+.form__radiogroup {
   padding: 1.5rem 3rem;
   border: 2px solid hsl(22, 65%, 57%);
   border-radius: 1rem;
@@ -86,7 +85,7 @@ body {
   align-items: center;
 }
 
-.form__group__radio label {
+.form__radiogroup label {
   font-size: 1.4rem;
   font-weight: 700;
   margin-left: 1.2rem;
@@ -106,18 +105,11 @@ body {
   gap: 3.2rem;
 }
 
-/* NEW */
-.error-text {
+.error-message {
   position: absolute;
   top: 0rem;
   right: 1.2rem;
   font-size: 1.2rem;
   font-weight: 700;
   color: hsl(0, 86%, 59%);
-}
-
-.invalid input {
-  border: 2px solid hsl(0, 86%, 59%);
-  /* outline-offset: 5px;
-  outline: 3px solid hsl(0, 86%, 59%); */
 }

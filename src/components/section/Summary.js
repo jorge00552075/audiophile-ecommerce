@@ -57,9 +57,7 @@ function Summary(props) {
           <span>{`${"$"} ${grandTotal}`}</span>
         </div>
       </div>
-      <button type="submit" className={styles.btn} onClick={props.handleSubmit}>
-        continue & pay
-      </button>
+      <button className={styles.btn}>continue & pay</button>
     </div>
   );
 }

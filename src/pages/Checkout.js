@@ -1,106 +1,96 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+
+import { useForm } from "react-hook-form";
+
 import { ReactComponent as Cashicon } from "../../src/cash.svg";
-import Summary from "../components/section/Summary";
 import CheckoutModal from "../components/section/CheckoutModal";
+import Summary from "../components/section/Summary";
+
 import styles from "./Checkout.module.css";
 
 function Checkout() {
-  // eslint-disable-next-line
-  const [showInstructions, setShowInstructions] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
 
-  // FORM VALIDATION
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    phone: null,
-    address: "",
-    zipcode: null,
-    city: "",
-    country: "",
-    enumber: null,
-    epin: null,
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onBlur", defaultValues: { payment: "emoney" } });
 
-  const [nameTouched, setNameTouched] = useState(false);
-  const nameValid = data.name.trim() !== "";
-  const nameInvalid = !nameValid && nameTouched;
-  let formValid = false;
-
-  if (nameValid) {
-    formValid = true;
-  }
-
-  // onChange
   function handleChange(e) {
-    setData({ ...data, address: e.target.value });
+    if (e.target.value === "emoney") {
+      setShowInstructions(false);
+    } else {
+      setShowInstructions(true);
+    }
   }
-  console.log(data);
-  // onBlur
-  function handleBlur(e) {
-    setNameTouched(true);
-  }
-  // onSubmit
-  function handleSubmit(e) {
-    e.preventDefault();
 
-    setNameTouched(true);
-    if (!nameValid) return;
-    // setName("");
-    setData.name("");
-
-    setNameTouched(false);
-
-    // CART MODAL
+  function onSubmit(data) {
+    // console.log(data);
     setShowModal(true);
   }
-
-  const errorClasses = nameInvalid
-    ? `${styles.form__group} ${styles.invalid}`
-    : `${styles.form__group}`;
 
   return (
     <React.Fragment>
       {showModal && <CheckoutModal />}
       <main>
-        {/* FORM ONSUBMIT */}
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.form__content}>
             <h1>checkout</h1>
             <h2 className={styles.form__section__title}>billing details</h2>
             <div className={styles.form__section}>
-              <div className={errorClasses}>
+              <div className={styles.form__group}>
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={data.name}
+                  {...register("name", { required: true })}
+                  placeholder="Alexei"
                 />
-                {nameInvalid && (
-                  <p className={styles["error-text"]}>NAME MUST NOT BE EMPTY</p>
+                {errors.name && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
                 )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="email">Email Address</label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  onChange={handleChange}
+                  {...register("email", {
+                    required: "This field is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Please enter a valid email",
+                    },
+                  })}
+                  placeholder="alexei@gmail.com"
                 />
+                {errors.email && (
+                  <p className={styles["error-message"]}>
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="phone">Phone Number</label>
                 <input
                   type="tel"
-                  name="phone"
                   id="phone"
-                  onChange={handleChange}
+                  {...register("phone", {
+                    required: true,
+                    valueAsNumber: true,
+                    pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
+                  })}
+                  placeholder="+1 (202) 555-0136"
                 />
+                {errors.phone && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
+                )}
               </div>
             </div>
             <h2 className={styles.form__section__title}>shipping info</h2>
@@ -111,50 +101,86 @@ function Checkout() {
                 <label htmlFor="address">Address</label>
                 <input
                   type="text"
-                  name="address"
                   id="address"
-                  onChange={handleChange}
+                  {...register("address", { required: true })}
+                  placeholder="1137 Williams Avenue"
                 />
+                {errors.address && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="zipcode">Zip Code</label>
                 <input
                   type="number"
-                  name="zipcode"
                   id="zipcode"
-                  onChange={handleChange}
+                  {...register("zipcode", {
+                    required: true,
+                    valueAsNumber: true,
+                  })}
+                  placeholder="10001"
                 />
+                {errors.zipcode && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="city">City</label>
                 <input
                   type="text"
-                  name="city"
                   id="city"
-                  onChange={handleChange}
+                  {...register("city", { required: true })}
+                  placeholder="New York"
                 />
+                {errors.city && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className={styles.form__group}>
                 <label htmlFor="country">Country</label>
                 <input
                   type="text"
-                  name="country"
                   id="country"
-                  onChange={handleChange}
+                  {...register("country", { required: true })}
+                  placeholder="United States"
                 />
+                {errors.country && (
+                  <p className={styles["error-message"]}>
+                    This field is required
+                  </p>
+                )}
               </div>
             </div>
             <h2 className={styles.form__section__title}>payment details</h2>
             <div className={styles.form__section}>
-              <label htmlFor="payment">Payment Method</label>
+              <label htmlFor="payment1">Payment Method</label>
               <div>
-                <div className={styles.form__group__radio}>
-                  <input type="radio" name="payment" id="payment" />
-                  <label htmlFor="payment">e-Money</label>
+                <div className={styles.form__radiogroup}>
+                  <input
+                    type="radio"
+                    id="payment1"
+                    {...register("payment", { required: true })}
+                    value="emoney"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="payment1">e-Money</label>
                 </div>
-                <div className={styles.form__group__radio}>
-                  <input type="radio" name="payment" id="payment" />
-                  <label htmlFor="payment">Cash on Delivery</label>
+                <div className={styles.form__radiogroup}>
+                  <input
+                    type="radio"
+                    id="payment2"
+                    {...register("payment", { required: true })}
+                    name="payment"
+                    value="cash"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="paymen2">Cash on Delivery</label>
                 </div>
               </div>
               {showInstructions ? (
@@ -173,27 +199,43 @@ function Checkout() {
                     <label htmlFor="enumber">e-Money Number</label>
                     <input
                       type="number"
-                      name="enumber"
                       id="enumber"
-                      onChange={handleChange}
+                      {...register("enumber", {
+                        required: true,
+                        valueAsNumber: true,
+                      })}
+                      placeholder="238521993"
                     />
+                    {errors.enumber && (
+                      <p className={styles["error-message"]}>
+                        This field is required
+                      </p>
+                    )}
                   </div>
                   <div>
                     <div className={styles.form__group}>
                       <label htmlFor="e-pin">e-Money PIN</label>
                       <input
                         type="number"
-                        name="epin"
                         id="epin"
-                        onChange={handleChange}
+                        {...register("epin", {
+                          required: "Please enter your pin number",
+                          valueAsNumber: true,
+                        })}
+                        placeholder="6891"
                       />
+                      {errors.epin && (
+                        <p className={styles["error-message"]}>
+                          {errors.epin.message}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </React.Fragment>
               )}
             </div>
           </div>
-          <Summary onSubmit={handleSubmit} />
+          <Summary />
         </form>
       </main>
     </React.Fragment>
