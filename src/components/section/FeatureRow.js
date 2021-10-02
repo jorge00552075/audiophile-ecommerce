@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import styles from "./FeatureRow.module.css";
+
 import { ReactComponent as Rarr } from "../../assets/shared/desktop/icon-arrow-right.svg";
+
+import styles from "./FeatureRow.module.css";
 
 function FeatureRow() {
   const categories = ["headphones", "speakers", "earphones"];

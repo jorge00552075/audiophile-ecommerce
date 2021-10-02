@@ -16,12 +16,9 @@
   z-index: 100;
   overflow: hidden;
   background-color: hsl(0, 0%, 100%);
-
   width: 37.7rem;
-  /* min-height: 48.8rem; */
   min-height: 44rem;
   border-radius: 1rem;
-
   padding: 3.6rem;
 }
 
@@ -72,17 +69,31 @@
   color: hsl(0, 0%, 50%);
 }
 
-.cart__modal__form {
+/* CUSTOM INPUT */
+.quantity-toggle {
+  height: 4.8rem;
   display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
-.addremove__input {
-  font-size: 3.2rem;
-  width: 87.5%;
-  border: 2px solid hsl(0, 0%, 50%);
-  margin-left: auto;
+.quantity-toggle button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+
+  font-size: 2rem;
+  font-weight: bold;
+  width: 4rem;
+  color: hsl(0, 0%, 59%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+.quantity-toggle input {
+  outline: none;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 4rem;
+  border: none;
+  background-color: hsl(0, 0%, 95%);
 }
 
 .cart__total-price {

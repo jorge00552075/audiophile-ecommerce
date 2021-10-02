@@ -1,8 +1,11 @@
 import { useContext } from "react";
+
 import { Link } from "react-router-dom";
+
 import CartContext from "../../context/cart-context";
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
+
 import styles from "./Header.module.css";
 
 function Header() {
@@ -27,9 +30,8 @@ function Header() {
             EARPHONES
           </Link>
         </nav>
-        {/* prettier-ignore */}
-        <Link to={total ? "/category/product/checkout" : "#"} className={styles.header__link}>
-          <CartIcon/>
+        <Link to={total ? "/checkout" : "#"} className={styles.header__link}>
+          <CartIcon />
         </Link>
       </div>
     </header>

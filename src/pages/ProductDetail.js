@@ -1,27 +1,27 @@
 // prettier-ignore
 import React, { useState, useEffect, useContext, useRef, useLayoutEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+
+import { Link, useParams } from "react-router-dom";
+
 import FeatureRow from "../components/section/FeatureRow";
 import About from "../components/section/About";
-import styles from "./ProductDetail.module.css";
-import dataJson from "../data.json";
 import CartContext from "../context/cart-context";
-
 import CartModal from "../components/section/CartModal";
+
+import dataJson from "../data.json";
+import styles from "./ProductDetail.module.css";
 
 function ProductDetail() {
   // HOOKS
   const [data, setData] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [showModal, setShowModal] = useState(false);
-
-  let location = useLocation();
+  const params = useParams();
 
   useEffect(() => {
-    const productid = location.pathname.split("/");
-    const product = dataJson.filter((item) => item.slug === productid[2]);
+    const product = dataJson.filter((item) => item.slug === params.slug);
     setData(product[0]);
-  }, [location.pathname]);
+  }, [params.slug]);
 
   const context = useContext(CartContext);
   const inputEl = useRef(null);
@@ -29,7 +29,14 @@ function ProductDetail() {
   useLayoutEffect(() => window.scrollTo(0, 0));
 
   // EVENT HANDLERS
-  const changeCartHandler = () => setQuantity(inputEl.current.value);
+  function changeCartHandler(e) {
+    e.preventDefault();
+
+    if (quantity === 0 && e.target.outerText === "-") return;
+    e.target.outerText === "+"
+      ? setQuantity((prevState) => prevState + 1)
+      : setQuantity((prevState) => prevState - 1);
+  }
 
   function addToCartHandler(e) {
     e.preventDefault();
@@ -45,9 +52,7 @@ function ProductDetail() {
   }
   const toggleModal = () => setShowModal(false);
 
-  if (data === null) {
-    return <h1>NO DATA</h1>;
-  }
+  if (data === null) return <div className="loader"></div>;
 
   return (
     <React.Fragment>
@@ -70,14 +75,17 @@ function ProductDetail() {
                 <p className={styles.productcard__text}>{data.description}</p>
                 <p className={styles.productcard__price}>$ {data.price}</p>
                 <form className={styles.productcard__form}>
-                  <input
-                    type="number"
-                    id="number"
-                    min="0"
-                    value={quantity}
-                    ref={inputEl}
-                    onChange={changeCartHandler}
-                  />
+                  <div className={styles["quantity-toggle"]}>
+                    <button onClick={changeCartHandler}>-</button>
+                    <input
+                      type="text"
+                      id="number"
+                      value={quantity}
+                      ref={inputEl}
+                      readOnly
+                    />
+                    <button onClick={changeCartHandler}>+</button>
+                  </div>
                   <button
                     type="submit"
                     className={styles.productcard__btn}

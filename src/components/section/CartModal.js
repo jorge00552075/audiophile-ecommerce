@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import styles from "./CartModal.module.css";
+
 import CartContext from "../../context/cart-context";
+
+import styles from "./CartModal.module.css";
 
 const Backdrop = (props) => (
   <div className={styles.backdrop} onClick={props.onClose} />
@@ -19,9 +21,13 @@ function ModalOverylay(props) {
   // SHOW MODAL
   const onClickHandler = () => props.toggleModal();
   // ADD - REMOVE - REMOVE ALL ITEMS
+
   function changeCartHandler(e) {
-    const item = context.cart.find((item, index) => item.id === +e.target.id);
-    if (e.target.value > item.quantity) {
+    const el = e.target.nextElementSibling ?? e.target.previousElementSibling;
+
+    const item = context.cart.find((item, index) => item.id === +el.id);
+
+    if (e.target.outerText === "+") {
       context.addItem({
         id: item.id,
         name: item.name,
@@ -33,6 +39,7 @@ function ModalOverylay(props) {
       context.removeItem({ name: item.name, quantity: 1 });
     }
   }
+
   const removeAllItems = () => context.removeAll();
 
   return (
@@ -59,15 +66,16 @@ function ModalOverylay(props) {
                 <span className={styles.cart__item__name}>{item.name}</span>
                 <span className={styles.cart__item__price}>$ {item.price}</span>
               </div>
-              <form className={styles.cart__modal__form}>
+              <div className={styles["quantity-toggle"]}>
+                <button onClick={changeCartHandler}>-</button>
                 <input
-                  className={styles.addremove__input}
-                  type="number"
+                  type="text"
                   id={item.id}
                   value={context.cart[i].quantity}
-                  onChange={changeCartHandler}
+                  readOnly
                 />
-              </form>
+                <button onClick={changeCartHandler}>+</button>
+              </div>
             </div>
           );
         })}
@@ -76,7 +84,7 @@ function ModalOverylay(props) {
           <span className={styles.cart__total}>$ {totalPrice}</span>
         </div>
         <Link
-          to="/category/product/checkout"
+          to="/checkout"
           className={styles.checkout__link}
           onClick={onClickHandler}
         >

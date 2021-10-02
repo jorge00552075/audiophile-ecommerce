@@ -1,5 +1,7 @@
 import { useContext } from "react";
+
 import CartContext from "../../context/cart-context";
+
 import styles from "./Summary.module.css";
 
 function Summary(props) {
@@ -8,7 +10,7 @@ function Summary(props) {
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const vat = Math.round(totalPrice * 0.05);
+  const vat = Math.round(totalPrice * 0.2);
   const grandTotal = totalPrice + vat;
 
   return (

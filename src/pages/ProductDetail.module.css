@@ -74,11 +74,30 @@
   gap: 2.4rem;
 }
 
-.productcard__form input {
-  /* CREATE CUSTOM LATER */
-  font-size: 3.9rem;
-  width: 12rem;
-  /* padding: 1.5rem 3.5rem; */
+.quantity-toggle {
+  height: 4.8rem;
+  display: flex;
+}
+
+.quantity-toggle button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+
+  font-size: 2rem;
+  font-weight: bold;
+  width: 4rem;
+  color: hsl(0, 0%, 59%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+.quantity-toggle input {
+  outline: none;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 4rem;
+  border: none;
+  background-color: hsl(0, 0%, 95%);
 }
 
 /* ****************************** */

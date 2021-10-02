@@ -28,6 +28,7 @@ hsl(0, 0%, 100%)
 hsl(0, 0%, 98%)
 hsl(0, 0%, 95%)
 hsl(0, 0%, 81%)
+hsl(0, 0%, 59%)
 hsl(0, 0%, 50%);
 
 
@@ -74,9 +75,31 @@ body {
   font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: hsl(0, 0%, 98%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.loader {
+  border: 16px solid hsl(0, 0%, 95%);
+  border-top: 16px solid hsl(22, 65%, 57%);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+
+  margin: 9.6rem auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

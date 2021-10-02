@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import imageHero from "../../assets/home/desktop/image-hero.jpg";
+
 import styles from "./Hero.module.css";
 
 function Hero() {

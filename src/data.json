@@ -173,6 +173,7 @@
   },
   {
     "id": 3,
+    "reverse": true,
     "slug": "xx99-mark-one-headphones",
     "name": "XX99 Mark I Headphones",
     "image": {
@@ -433,6 +434,7 @@
   },
   {
     "id": 6,
+    "reverse": true,
     "slug": "zx9-speaker",
     "name": "ZX9 Speaker",
     "image": {

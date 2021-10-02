@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import styles from "./CheckoutModal.module.css";
+
 import CartContext from "../../context/cart-context";
+
+import styles from "./CheckoutModal.module.css";
 
 function Backdrop(props) {
   return <div className={styles.backdrop} />;
@@ -11,6 +13,7 @@ function Backdrop(props) {
 
 function ModalOverylay(props) {
   const context = useContext(CartContext);
+
   const totalItems = context.cart.reduce(
     (total, item) => total + item.quantity,
     0
@@ -19,7 +22,7 @@ function ModalOverylay(props) {
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const vat = totalPrice * 0.05;
+  const vat = totalPrice * 0.2;
   const grandTotal = totalPrice + vat;
 
   // prettier-ignore
@@ -68,9 +71,7 @@ function ModalOverylay(props) {
           <span>$ {grandTotal}</span>
         </div>
       </div>
-      <Link to="/" className={styles.home__link}>
-        back to home
-      </Link>
+      <Link to="/" onClick={() => context.removeAll()}>back to home</Link>
     </div>
   );
 }

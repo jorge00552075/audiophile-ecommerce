@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/section/Header";
 import Home from "./pages/Home";
@@ -11,16 +11,24 @@ import Checkout from "./pages/Checkout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <React.Fragment>
       <Header />
       <Switch>
-        <Home exact path="/" />
-        <Category exact path="/:slug" />
-        <ProductDetail path="/product/:slug" />
-        <Checkout exact path="/category/product/checkout" />
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/:slug">
+          <Category />
+        </Route>
+        <Route path="/product/:slug">
+          <ProductDetail />
+        </Route>
       </Switch>
       <Footer />
-    </BrowserRouter>
+    </React.Fragment>
   );
 }
 
