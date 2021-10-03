@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import { ReactComponent as Cashicon } from "../../src/cash.svg";
 import CheckoutModal from "../components/section/CheckoutModal";
 import Summary from "../components/section/Summary";
+import CartContext from "../context/cart-context";
 
 import styles from "./Checkout.module.css";
 
 function Checkout() {
   const [showModal, setShowModal] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
+  const context = useContext(CartContext);
 
   const {
     register,
@@ -27,7 +30,8 @@ function Checkout() {
   }
 
   function onSubmit(data) {
-    // console.log(data);
+    if (context.cart.length === 0) return;
+    console.log(data);
     setShowModal(true);
   }
 
@@ -36,6 +40,9 @@ function Checkout() {
       {showModal && <CheckoutModal />}
       <main>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <Link to="/" className={styles.link__back}>
+            Go Back
+          </Link>
           <div className={styles.form__content}>
             <h1>checkout</h1>
             <h2 className={styles.form__section__title}>billing details</h2>

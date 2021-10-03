@@ -18,6 +18,10 @@
   border-bottom: 1px solid hsl(0, 0%, 100%);
 }
 
+.menu-icon {
+  display: none;
+}
+
 .header__nav {
   width: 40.3rem;
   display: flex;
@@ -54,4 +58,27 @@
 .header__link:focus {
   outline-offset: 5px;
   outline: 3px solid hsl(22, 65%, 57%);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .header__content {
+    max-width: 768rem;
+  }
+
+  .menu-icon {
+    display: inline-block;
+    height: 2.4rem;
+    width: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__link {
+    margin-left: auto;
+  }
 }

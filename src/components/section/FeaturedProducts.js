@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { ReactComponent as Circles } from "../../assets/desktop/pattern-circles.svg";
+
 import styles from "./FeaturedProducts.module.css";
 
 function FeaturedProducts() {
@@ -7,11 +9,7 @@ function FeaturedProducts() {
     <section className={styles.featured}>
       <div className={styles["featured__grid-container"]}>
         <div className={styles["featured__row-1"]}>
-          <img
-            src="../../assets/home/desktop/pattern-circles.svg"
-            alt="pattern circles"
-            className={styles["pattern-circles"]}
-          />
+          <Circles />
           <img
             src="../../assets/home/desktop/image-speaker-zx9.png"
             alt="ZX9 Speaker"

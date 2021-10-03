@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
-import { ReactComponent as Facebook } from "../../assets/shared/desktop/icon-facebook.svg";
-import { ReactComponent as Twitter } from "../../assets/shared/desktop/icon-twitter.svg";
-import { ReactComponent as Instagram } from "../../assets/shared/desktop/icon-instagram.svg";
+import { ReactComponent as Logo } from "../../assets/desktop/logo.svg";
+import { ReactComponent as Facebook } from "../../assets/desktop/icon-facebook.svg";
+import { ReactComponent as Twitter } from "../../assets/desktop/icon-twitter.svg";
+import { ReactComponent as Instagram } from "../../assets/desktop/icon-instagram.svg";
 
 import styles from "./Footer.module.css";
 

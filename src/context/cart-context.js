@@ -5,12 +5,14 @@ const CartContext = React.createContext({
   addItem: () => {},
   removeItem: () => {},
   removeAll: () => {},
+  refreshCart: (items) => {},
 });
 
 const ACTIONS = {
   ADD_ITEM: "ADD_ITEM",
   REMOVE_ITEM: "REMOVE_ITEM",
   REMOVE_ALL: "REMOVE_ALL",
+  REFRESH_CART: "REFRESH_CART",
 };
 
 function reducer(state, action) {
@@ -58,6 +60,10 @@ function reducer(state, action) {
     return [];
   }
 
+  if (action.type === ACTIONS.REFRESH_CART) {
+    return action.payload;
+  }
+
   return state;
 }
 
@@ -85,6 +91,10 @@ export function CartContextProvider(props) {
   }
 
   const removeAllHandler = () => dispatch({ type: ACTIONS.REMOVE_ALL });
+  // prettier-ignore
+  function refreshCartHandler(items) {
+    dispatch({ type: ACTIONS.REFRESH_CART, payload: items })
+  }
 
   return (
     <CartContext.Provider
@@ -93,6 +103,7 @@ export function CartContextProvider(props) {
         addItem: addItemHandler,
         removeItem: removeItemHandler,
         removeAll: removeAllHandler,
+        refreshCart: refreshCartHandler,
       }}
     >
       {props.children}

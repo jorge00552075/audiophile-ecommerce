@@ -21,7 +21,7 @@
   border-radius: 1rem;
 }
 
-.pattern-circles {
+.featured__row-1 svg {
   transform: translateX(-15%);
 }
 
@@ -154,3 +154,6 @@
   text-align: center;
   margin-top: 10rem;
 }
+
+/* ****************************** */
+/* MEDIA QUERIES */

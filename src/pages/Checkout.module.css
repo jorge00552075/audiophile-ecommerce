@@ -1,4 +1,5 @@
 .form {
+  position: relative;
   max-width: 111rem;
   margin: 9.6rem auto 0;
   color: hsl(0, 0%, 0%);
@@ -101,9 +102,33 @@
 
 .error-message {
   position: absolute;
-  top: 0rem;
+  top: 0;
   right: 1.2rem;
   font-size: 1.2rem;
   font-weight: 700;
   color: hsl(0, 86%, 59%);
+}
+
+/* GO BACK LINK */
+.link__back:link,
+.link__back:visited {
+  text-decoration: none;
+  color: hsl(0, 0%, 50%);
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  position: absolute;
+  top: -4.8rem;
+  left: 1.2rem;
+}
+
+.link__back:hover,
+.link__back:active {
+  color: hsl(22, 65%, 57%);
+  text-decoration: underline;
+}
+
+.link__back:focus {
+  outline-offset: 5px;
+  outline: 3px solid hsl(22, 65%, 57%);
 }

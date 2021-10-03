@@ -71,7 +71,7 @@ function ModalOverylay(props) {
           <span>$ {grandTotal}</span>
         </div>
       </div>
-      <Link to="/" onClick={() => context.removeAll()}>back to home</Link>
+      <Link to="/" className={styles.home__link} onClick={() => context.removeAll()}>back to home</Link>
     </div>
   );
 }

@@ -40,3 +40,26 @@
 .about__image {
   border-radius: 1rem;
 }
+
+/* ****************************** */
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .about__content {
+    max-width: 68.9rem;
+    height: 63.3rem;
+    padding: 1.2rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.2rem;
+
+    overflow: hidden;
+  }
+
+  .about__image {
+    border-radius: 1rem;
+    width: 100%;
+  }
+}

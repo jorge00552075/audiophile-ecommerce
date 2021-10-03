@@ -87,6 +87,10 @@
   background-color: hsl(0, 0%, 95%);
 }
 
+.quantity-toggle button:hover {
+  color: hsl(22, 65%, 57%);
+}
+
 .quantity-toggle input {
   outline: none;
   font-size: 1.6rem;
