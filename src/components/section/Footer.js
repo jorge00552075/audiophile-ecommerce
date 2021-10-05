@@ -36,36 +36,38 @@ function Footer() {
             our demo facility - we’re open 7 days a week. Copyright 2021. All
             Rights Reserved
           </p>
-          <div className={styles.footer__social}>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.social__link}
-            >
-              <Facebook />
-            </a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.social__link}
-            >
-              <Twitter />
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.social__link}
-            >
-              <Instagram />
-            </a>
+          <div className={styles.footer__bottom}>
+            <div className={styles.footer__social}>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.social__link}
+              >
+                <Facebook />
+              </a>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.social__link}
+              >
+                <Twitter />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.social__link}
+              >
+                <Instagram />
+              </a>
+            </div>
+            <p className={styles.footer__copyright}>
+              Copyright 2021. All Rights Reserved
+            </p>
           </div>
         </div>
-        <p className={styles.footer__copyright}>
-          Copyright 2021. All Rights Reserved
-        </p>
       </div>
     </footer>
   );

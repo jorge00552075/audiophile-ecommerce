@@ -4,7 +4,6 @@
 
 .featurerow__content {
   max-width: 111rem;
-  padding: 1.2rem;
   margin: 0 auto;
 
   display: grid;
@@ -76,19 +75,11 @@
 
 /* ****************************** */
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .featurerow__content {
-    max-width: 68.9rem;
-    padding: 1.2rem 0;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    gap: 0.8rem;
+    width: 68.9rem;
   }
-
   .feature__card {
-    width: 22.3rem;
+    max-width: 22.3rem;
   }
 }

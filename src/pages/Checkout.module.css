@@ -1,3 +1,7 @@
+.main {
+  overflow: auto;
+}
+
 .form {
   position: relative;
   max-width: 111rem;

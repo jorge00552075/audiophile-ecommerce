@@ -38,7 +38,7 @@ function Checkout() {
   return (
     <React.Fragment>
       {showModal && <CheckoutModal />}
-      <main>
+      <main className={styles.main}>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <Link to="/" className={styles.link__back}>
             Go Back

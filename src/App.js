@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import { Route, Switch } from "react-router-dom";
 
@@ -11,15 +11,13 @@ import Checkout from "./pages/Checkout";
 import CartContext from "./context/cart-context";
 
 function App() {
-  const [fetched, setFetched] = useState(false);
-
   const context = useContext(CartContext);
   let items = context.cart;
 
   useEffect(() => {
-    let prevItems = JSON.parse(localStorage.getItem("cart")) || [];
+    let prevItems = JSON.parse(localStorage.getItem("cart")) ?? [];
     context.refreshCart(prevItems);
-    setFetched(true);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

@@ -7,7 +7,6 @@
   position: relative;
   max-width: 111rem;
   height: 65rem;
-  padding: 12px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -80,12 +79,10 @@
 /* ****************************** */
 /* MEDIA QUERIES */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero__content {
-    max-width: 768px;
     grid-template-columns: 1fr;
     align-content: center;
-    overflow: hidden;
   }
 
   .hero__image {
@@ -98,18 +95,12 @@
   }
 }
 
-@media (max-width: 640px) {
-  /* DYNAMICALLY CHANGE IMAGE AT BREAKPOINT ? */
+@media (max-width: 768px) {
   .hero__image {
     display: none;
   }
 
   .hero__h1 {
     font-size: 3.6rem;
-    letter-spacing: 1px;
-    line-height: 1.05;
-    text-transform: uppercase;
-
-    margin-bottom: 2.4rem;
   }
 }

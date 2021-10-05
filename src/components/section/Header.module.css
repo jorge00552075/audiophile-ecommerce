@@ -1,5 +1,4 @@
 .header {
-  /* slightly lighter to match hero image */
   background-color: hsl(0, 0%, 10%);
   color: hsl(0, 0%, 100%);
   height: 8rem;
@@ -12,13 +11,13 @@
   padding: 12px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   border-bottom: 1px solid hsl(0, 0%, 100%);
 }
 
-.menu-icon {
+.header__btn,
+.header__menu {
   display: none;
 }
 
@@ -60,18 +59,27 @@
   outline: 3px solid hsl(22, 65%, 57%);
 }
 
+/* ****************************** */
 /* MEDIA QUERIES */
-
 @media (max-width: 768px) {
   .header__content {
     max-width: 768rem;
   }
 
-  .menu-icon {
+  .header__btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0.8rem 2.4rem 0 0;
+    /* centers menu icon */
+    display: flex;
+    align-items: center;
+  }
+
+  .header__menu {
     display: inline-block;
     height: 2.4rem;
     width: 2.4rem;
-    margin-right: 2.4rem;
   }
 
   .header__nav {

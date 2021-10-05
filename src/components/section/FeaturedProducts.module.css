@@ -7,13 +7,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 2.4rem;
   max-width: 111rem;
-  padding: 1.2rem;
   margin: 0 auto;
 }
 
 .featured__row-1 {
   position: relative;
-
   height: 56rem;
   background-color: hsl(22, 65%, 57%);
   grid-column: 1 / span 2;
@@ -35,8 +33,7 @@
 .featured__row-1 .featured__content {
   position: absolute;
   top: 25%;
-  right: 12.5%;
-
+  left: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +115,6 @@
 .featured__row-2 {
   position: relative;
   grid-column: 1 / span 2;
-
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -135,17 +131,25 @@
   height: 100%;
 }
 
+.image2__tablet {
+  display: none;
+}
+
 .featured__row-3 {
   grid-column: 1 / span 1;
-
   overflow: hidden;
   border-radius: 1rem;
+}
+
+/* IMAGE 3 *************************************** */
+.image3000 {
+  height: 100%;
+  width: 100%;
 }
 
 .featured__row-4 {
   background-color: hsl(0, 0%, 95%);
   grid-column: 2 / span 1;
-
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -157,3 +161,68 @@
 
 /* ****************************** */
 /* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .featured__grid-container {
+    width: 68.9rem;
+  }
+
+  .featured__row-1 {
+    min-height: 72rem;
+  }
+
+  .featured__row-1 svg {
+    display: none;
+  }
+
+  .featured__row-1 .featured__image {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20rem;
+  }
+
+  .featured__row-1 .featured__content {
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    align-items: center;
+  }
+
+  .featured__title,
+  .featured__text {
+    text-align: center;
+  }
+  /* ZX7 SPEAKER */
+  .featured__row-2 {
+    min-height: 32rem;
+  }
+
+  .featured__row-2 .featured__content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12.5%;
+  }
+
+  .featured__image--2 {
+    display: none;
+  }
+
+  .image2__tablet {
+    display: block;
+  }
+  /* IMAGE 3 *************************************** */
+  .image3000 {
+    width: 100%;
+    height: 100%;
+    border-radius: 1px;
+  }
+
+  .image3__desktop {
+    display: none;
+  }
+
+  .image3__tablet {
+    display: block;
+  }
+}

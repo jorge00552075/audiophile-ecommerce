@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Circles } from "../../assets/desktop/pattern-circles.svg";
+import image2 from "../../assets/desktop/image-speaker-zx7.jpg";
+// EARPHONES
+import sm_earphones from "../../assets/desktop/image-earphones-yx1.jpg";
+import lg_earphones from "../../assets/desktop/image-earphones-yx1 copy.jpg";
 
 import styles from "./FeaturedProducts.module.css";
 
@@ -42,12 +46,31 @@ function FeaturedProducts() {
             alt="ZX7 Speaker"
             className={styles["featured__image--2"]}
           />
+          <img
+            src={image2}
+            alt="ZX7 Speaker"
+            className={styles.image2__tablet}
+          />
         </div>
 
         <div className={styles["featured__row-3"]}>
-          <img
+          {/* YX1 EARPHONES IMGS */}
+          {/* <img
             src="../../assets/home/desktop/image-earphones-yx1.jpg"
             alt="YX1 Earphones"
+            className={styles.image3__desktop}
+          />
+          <img
+            src={image3}
+            alt="YX1 Earphones"
+            className={styles.image3__tablet}
+          /> */}
+          {/* DEMO */}
+          <img
+            src={lg_earphones}
+            srcSet={`${sm_earphones} 300w, ${lg_earphones} 1024w`}
+            alt="joiwqjroipepowriue"
+            className={styles.image3000}
           />
         </div>
         <div className={styles["featured__row-4"]}>
