@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Rarr } from "../../assets/desktop/icon-arrow-right.svg";
+// SRC FOLDER
+import { ReactComponent as Rarr } from "../../assets/shared/desktop/icon-arrow-right.svg";
 
 import styles from "./FeatureRow.module.css";
 

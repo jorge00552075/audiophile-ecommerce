@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+import lg_hero from "../../assets/home/desktop/image-hero.jpg";
+import md_hero from "../../assets/home/tablet/image-header.jpg";
+
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -7,9 +10,14 @@ function Hero() {
     <div className={styles.hero}>
       <div className={styles.hero__content}>
         <img
-          src="../../assets/home/desktop/image-hero.jpg"
+          src={lg_hero}
           alt="XX99 Mark II Headphones"
-          className={styles.hero__image}
+          className={styles["hero__image--lg"]}
+        />
+        <img
+          src={md_hero}
+          alt="XX99 Mark II Headphones"
+          className={styles["hero__image--md"]}
         />
         <div className={styles.hero__product}>
           <span>New product</span>

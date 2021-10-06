@@ -1,18 +1,35 @@
 import styles from "./About.module.css";
-// src/assets/desktop/image-best-gear.jpg
-import imagetab from "../../assets/desktop/image-best-gear.jpg";
+
+// SRC FOLDER
+import lg_bestgear from "../../assets/shared/desktop/image-best-gear.jpg";
+import md_bestgear from "../../assets/shared/tablet/image-best-gear.jpg";
+import sm_bestgear from "../../assets/shared/mobile/image-best-gear.jpg";
 
 function About() {
   return (
     <section className={styles.about}>
-      {/* GRID CONTAINER */}
       <div className={styles.about__content}>
-        {/* Left Side */}
-        <img
-          src={imagetab}
-          alt="Man listening to music on headphones"
-          className={styles["about__image--tab"]}
-        />
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet={lg_bestgear}
+            width="100%"
+            height="100%"
+          />
+          <source
+            media="(min-width: 640px)"
+            srcSet={md_bestgear}
+            width="100%"
+            height="100%"
+          />
+          <source
+            media="(min-width: 320px)"
+            srcSet={sm_bestgear}
+            width="100%"
+          />
+          <img src={lg_bestgear} alt="Man listening to music on headphones" />
+        </picture>
+
         <div className={styles.text__content}>
           <h2 className={styles.about__heading}>
             Bringing you the <span>best</span> audio gear
@@ -26,12 +43,6 @@ function About() {
             make Audiophile the best place to buy you portable audio equipment.
           </p>
         </div>
-        {/* Right Side */}
-        <img
-          src="../assets/shared/desktop/image-best-gear.jpg"
-          alt="Man listening to music on headphones"
-          className={styles.about__image}
-        />
       </div>
     </section>
   );

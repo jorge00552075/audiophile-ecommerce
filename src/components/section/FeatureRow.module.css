@@ -69,8 +69,8 @@
 }
 
 .feature__link:focus {
-  outline-offset: 5px;
-  outline: 3px solid #d87d4a;
+  outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
 }
 
 /* ****************************** */
@@ -79,7 +79,24 @@
   .featurerow__content {
     width: 68.9rem;
   }
+
   .feature__card {
     max-width: 22.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .featurerow {
+    margin-top: 4.8rem;
+  }
+
+  .featurerow__content {
+    max-width: 32.7rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .feature__card {
+    max-width: 100%;
   }
 }

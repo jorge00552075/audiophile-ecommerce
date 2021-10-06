@@ -134,6 +134,6 @@
 }
 
 .home__link:focus {
-  outline-offset: 5px;
-  outline: 3px solid hsl(0, 0%, 100%);
+  outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
 }

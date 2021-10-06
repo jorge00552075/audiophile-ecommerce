@@ -6,7 +6,7 @@ import styles from "../../pages/Category.module.css";
 function ProductCard({ data }) {
   return (
     <React.Fragment>
-      {data.reverse === true ? (
+      {data.reverse === 3 ? (
         <article className={styles.productcard}>
           <div
             className={`${styles.productcard__content} ${styles["m-auto-0"]}`}
@@ -29,11 +29,12 @@ function ProductCard({ data }) {
         </article>
       ) : (
         <article className={styles.productcard}>
-          <img
-            src={data.image.desktop}
-            alt={data.name}
-            className={styles.productcard__image}
-          />
+          {/* prettier-ignore */}
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={data.categoryImage.desktop} width="100%" height="100%"/>
+            <source media="(min-width: 375px)" srcSet={data.categoryImage.tablet}  width="100%" height="100%"/>
+            <img src={data.image.tablet} alt="ZX7 Speaker" />
+          </picture>
           <div className={styles.productcard__content}>
             {data.new && <span>new product</span>}
             <h2 className={styles.productcard__title}>{data.name}</h2>

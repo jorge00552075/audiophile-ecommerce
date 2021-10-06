@@ -3,9 +3,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import CartContext from "../../context/cart-context";
-import { ReactComponent as Logo } from "../../assets/desktop/logo.svg";
-import { ReactComponent as Icon } from "../../assets/desktop/icon-cart.svg";
-import { ReactComponent as Menu } from "../../assets/desktop/icon-hamburger.svg";
+
+// SRC FOLDER
+import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
+import { ReactComponent as Icon } from "../../assets/shared/desktop/icon-cart.svg";
+import { ReactComponent as Menu } from "../../assets/shared/tablet/icon-hamburger.svg";
 
 import styles from "./Header.module.css";
 

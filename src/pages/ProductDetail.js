@@ -64,11 +64,23 @@ function ProductDetail() {
         <section className={styles.section}>
           <div className={styles.section__content}>
             <article className={styles.productcard}>
-              <img
-                src={data.image.desktop}
-                alt={data.image.name}
-                className={styles.productcard__image}
-              />
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={data.image.desktop}
+                  className={styles.productcard__image}
+                />
+                <source
+                  media="(min-width: 375px)"
+                  srcSet={data.image.tablet}
+                  className={styles.productcard__image}
+                />
+                <img
+                  src={data.image.desktop}
+                  alt={data.image.name}
+                  className={styles.productcard__image}
+                />
+              </picture>
               <div className={styles.productcard__content}>
                 {data.new && <span>new product</span>}
                 <h1 className={styles.productcard__title}>{data.name}</h1>
@@ -148,11 +160,25 @@ function ProductDetail() {
                   className={styles.others__card}
                   key={Math.trunc(Math.random() * 10000)}
                 >
-                  <img
-                    src={data.others[i].image.desktop}
-                    alt={data.others[i].name}
-                    className={styles.others__image}
-                  />
+                  <picture>
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet={data.others[i].image.desktop}
+                      width="100%"
+                      className={styles.others__image}
+                    />
+                    <source
+                      media="(min-width: 375px)"
+                      srcSet={data.others[i].image.tablet}
+                      width="223px"
+                      className={styles.others__image}
+                    />
+                    <img
+                      src={data.others[i].image.tablet}
+                      alt={data.others[i].name}
+                      className={styles.others__image}
+                    />
+                  </picture>
                   <div className={styles.card__content}>
                     <p className={styles.others__name}>{data.others[i].name}</p>
                     <Link

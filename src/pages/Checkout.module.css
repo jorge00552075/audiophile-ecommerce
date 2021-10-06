@@ -133,6 +133,21 @@
 }
 
 .link__back:focus {
-  outline-offset: 5px;
-  outline: 3px solid hsl(22, 65%, 57%);
+  outline: none;
+  box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
+}
+
+/* ****************************** */
+/* MEDIA QUERIES */
+
+@media (max-width: 1024px) {
+  .form {
+    max-width: 68.9rem;
+    grid-template-columns: 1fr;
+  }
+
+  .form__content {
+    width: 100%;
+    padding: 2.4rem;
+  }
 }
