@@ -45,7 +45,7 @@ function FeaturedProducts() {
           </div>
           <picture>
             <source
-              media="(min-width: 1024px)"
+              media="(min-width: 1080px)"
               srcSet={lg_speaker}
               width="100%"
               height="100%"
@@ -68,7 +68,7 @@ function FeaturedProducts() {
         <div className={styles["featured__row-3"]}>
           <picture>
             <source
-              media="(min-width: 1024px)"
+              media="(min-width: 1080px)"
               srcSet={lg_earphones}
               width="100%"
               height="100%"

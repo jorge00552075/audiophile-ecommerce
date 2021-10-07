@@ -5,9 +5,6 @@
 .section__content {
   margin: 0 auto;
   max-width: 111rem;
-
-  display: grid;
-  row-gap: 9.6rem;
 }
 
 .productcard {
@@ -17,15 +14,14 @@
   column-gap: 2.4rem;
 }
 
-.productcard__image {
+.productcard picture img {
   width: 100%;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .productcard__content {
-  width: 44.5rem;
-  height: min-content;
+  max-width: 44.5rem;
   margin: auto 0 auto auto;
 }
 
@@ -100,7 +96,7 @@
   background-color: hsl(0, 0%, 95%);
 }
 
-/* ****************************** */
+/* BUTTONS */
 .productcard__btn {
   cursor: pointer;
   font-family: inherit;
@@ -126,7 +122,6 @@
   box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
 }
 
-/* ****************************** */
 /* FEATURES */
 .section-features {
   max-width: 111rem;
@@ -185,7 +180,7 @@
 
 .features__item {
 }
-/* ****************************** */
+
 /* GALLERY */
 .section-gallery {
   margin-top: 9.6rem;
@@ -201,51 +196,55 @@
   grid-template-rows: 1fr 1fr;
   gap: 3.2rem;
   overflow: hidden;
-  border-radius: 1rem;
 }
 
-.gallery__first {
-  grid-column: 1 / span 1;
-  border-radius: 1rem;
-  width: 100%;
-}
-
+.gallery__first,
 .gallery__second {
   grid-column: 1 / span 1;
-  border-radius: 1rem;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 .gallery__third {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
-  border-radius: 1rem;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
-/* ****************************** */
-/* OTHERS */
+.others__text {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
 
+/* OTHERS */
 .section--others {
   margin-top: 9.6rem;
 }
 
 .others__content {
   max-width: 111rem;
-  padding: 0 1.2rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 
 .others__card {
-  width: 35rem;
+  max-width: 35rem;
   height: 47.1rem;
 }
 
 .others__image {
-  margin-bottom: 3.2rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3.2rem;
 }
 
 .card__content {
@@ -285,11 +284,11 @@
 }
 
 /* ****************************** */
-/* MEDIA QUERIES */
+/* TABLETS */
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .section__content {
-    max-width: none;
+    max-width: 108rem;
   }
 
   .productcard {
@@ -305,16 +304,13 @@
     max-width: 34rem;
   }
 
-  /* ****************************** */
   /* OTHERS */
-
   .others__content {
     max-width: 69.1rem;
     justify-content: center;
     gap: 1.2rem;
   }
 
-  /* ****************************** */
   /* GALLERY */
   .gallery__content {
     max-width: 69rem;
@@ -326,7 +322,6 @@
     grid-template-rows: 1fr 1fr;
     gap: 1.2rem;
     overflow: hidden;
-    border-radius: 1rem;
   }
 
   .gallery__first,
@@ -336,7 +331,6 @@
     height: 100%;
   }
 
-  /* ****************************** */
   /* FEATURES */
   .section-features {
     max-width: 69rem;
@@ -352,5 +346,77 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+}
+/* ****************************** */
+/* PHONES */
+@media (max-width: 640px) {
+  .section {
+    margin-top: 6.4rem;
+  }
+
+  .section__content {
+    max-width: 32.7rem;
+  }
+
+  .productcard {
+    width: 100%;
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .productcard__content {
+    margin-top: 3.2rem;
+  }
+
+  .productcard__title {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+  }
+
+  .section-features {
+    max-width: 32.7rem;
+  }
+
+  .features__col-2 {
+    grid-template-columns: 1fr;
+  }
+  /* GALLERY */
+  .gallery__content {
+    max-width: 32.7rem;
+    height: 75.6rem;
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__first,
+  .gallery__second,
+  .gallery__third {
+    grid-column: 1 / span 1;
+  }
+
+  /* OTHERS */
+
+  .others__content {
+    max-width: 32.7rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6.4rem;
+  }
+
+  .others__card {
+    width: 100%;
+    height: 26.5rem;
+  }
+
+  .card__content {
+    text-align: center;
+  }
+
+  .others__name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    margin-bottom: 3.2rem;
   }
 }

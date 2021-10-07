@@ -14,9 +14,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 54rem;
-  height: 58rem;
   z-index: 100;
-  overflow: hidden;
   background-color: hsl(0, 0%, 100%);
   padding: 3.6rem;
   border-radius: 1rem;
@@ -40,7 +38,6 @@
   font-size: 1.5rem;
   font-weight: 300;
   color: hsl(0, 0%, 50%);
-
   margin-bottom: 3.2rem;
 }
 
@@ -50,7 +47,6 @@
   min-height: 14rem;
   border-radius: 1rem;
   overflow: hidden;
-
   margin-bottom: 3.2rem;
 }
 
@@ -136,4 +132,14 @@
 .home__link:focus {
   outline: none;
   box-shadow: 0 0 0 0.5rem rgba(28, 127, 214, 0.8);
+}
+
+@media (max-width: 640px) {
+  .modal {
+    width: 32.7rem;
+  }
+
+  .modal__grid__container {
+    grid-template-columns: 1fr;
+  }
 }

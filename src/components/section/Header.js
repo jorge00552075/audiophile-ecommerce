@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import CartContext from "../../context/cart-context";
 
-// SRC FOLDER
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as Icon } from "../../assets/shared/desktop/icon-cart.svg";
 import { ReactComponent as Menu } from "../../assets/shared/tablet/icon-hamburger.svg";

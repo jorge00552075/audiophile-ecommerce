@@ -29,11 +29,20 @@ function ProductCard({ data }) {
         </article>
       ) : (
         <article className={styles.productcard}>
-          {/* prettier-ignore */}
           <picture>
-            <source media="(min-width: 1024px)" srcSet={data.categoryImage.desktop} width="100%" height="100%"/>
-            <source media="(min-width: 375px)" srcSet={data.categoryImage.tablet}  width="100%" height="100%"/>
-            <img src={data.image.tablet} alt="ZX7 Speaker" />
+            <source
+              media="(min-width: 1080px)"
+              srcSet={data.categoryImage.desktop}
+            />
+            <source
+              media="(min-width: 689px)"
+              srcSet={data.categoryImage.tablet}
+            />
+            <source
+              media="(min-width: 327px)"
+              srcSet={data.categoryImage.mobile}
+            />
+            <img src={data.image.mobile} alt={data.name} />
           </picture>
           <div className={styles.productcard__content}>
             {data.new && <span>new product</span>}

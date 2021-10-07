@@ -96,7 +96,7 @@
 
 /* ****************************** */
 /* MEDIA QUERIES */
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .footer__content {
     max-width: 68.9rem;
   }

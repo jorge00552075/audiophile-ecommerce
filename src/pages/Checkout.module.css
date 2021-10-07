@@ -140,7 +140,7 @@
 /* ****************************** */
 /* MEDIA QUERIES */
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .form {
     max-width: 68.9rem;
     grid-template-columns: 1fr;
@@ -149,5 +149,15 @@
   .form__content {
     width: 100%;
     padding: 2.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    max-width: 32.7rem;
+  }
+
+  .form__section {
+    grid-template-columns: 1fr;
   }
 }

@@ -146,14 +146,9 @@
 
 /* ****************************** */
 /* MEDIA QUERIES */
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .featured__grid-container {
     width: 68.9rem;
-  }
-
-  .featured__row-1 {
-    /* CHECK */
-    min-height: 60rem;
   }
 
   .featured__row-1 svg {
@@ -203,5 +198,11 @@
 
   .featured__row-4 {
     grid-column: 1 / span 2;
+    height: 20rem;
+  }
+
+  .featured__row-4 .featured__content {
+    text-align: center;
+    margin-top: 4.8rem;
   }
 }
