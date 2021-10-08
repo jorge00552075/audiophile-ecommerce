@@ -12,4 +12,4 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://audiophile-00552075.netlify.app/)
+- Live Site URL: [https://audiophile-00552075.netlify.app/](https://audiophile-00552075.netlify.app/)
