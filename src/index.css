@@ -16,8 +16,9 @@ Small: 1.05
 Large: 1.7
 
 --- 02 COLORS
+hsl(22, 52%, 51%) - Shade
 hsl(22, 65%, 57%) - Primary Color
-hsl(21, 94%, 75%)
+hsl(21, 94%, 75%) - Tint
 
 hsl(0, 0%, 0%)
 hsl(0, 0%, 6%)
@@ -33,10 +34,8 @@ hsl(0, 0%, 50%);
 
 
 --- 05 SHADOWS
-Regular: 
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-Medium: 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+Regular: box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+Medium: box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 --- 06 BORDER-RADIUS
 border-radius: 6px;

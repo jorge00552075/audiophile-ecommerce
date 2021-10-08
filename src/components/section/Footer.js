@@ -30,16 +30,17 @@ function Footer() {
           </div>
         </nav>
         <div className={styles.footer__container}>
-          <p className={styles.footer__text}>
+          <h4 className={styles.footer__text}>
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
             our demo facility - we’re open 7 days a week. Copyright 2021. All
             Rights Reserved
-          </p>
+          </h4>
           <div className={styles.footer__bottom}>
             <div className={styles.footer__group}>
               <a
+                title="facebook link"
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noreferrer"
@@ -48,6 +49,7 @@ function Footer() {
                 <Facebook />
               </a>
               <a
+                title="twitter link"
                 href="https://twitter.com/"
                 target="_blank"
                 rel="noreferrer"
@@ -56,6 +58,7 @@ function Footer() {
                 <Twitter />
               </a>
               <a
+                title="instagram link"
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noreferrer"

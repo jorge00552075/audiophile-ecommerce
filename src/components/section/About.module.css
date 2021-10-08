@@ -33,7 +33,7 @@
 .about__text {
   font-size: 1.5rem;
   line-height: 1.7;
-  color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 6%);
   margin-top: 2.4rem;
 }
 
@@ -57,9 +57,9 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 711px) {
   .about__content {
-    width: 32.7rem;
+    max-width: 32.7rem;
   }
 
   .text__content {

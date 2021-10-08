@@ -7,8 +7,8 @@
 .footer__content {
   max-width: 111rem;
   min-height: 36.5rem;
+  padding: 6.4rem 1rem;
   margin: 0 auto;
-  padding: 6.4rem 0;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -122,7 +122,7 @@
 
 @media (max-width: 640px) {
   .footer__content {
-    max-width: 32.5rem;
+    max-width: 32.7rem;
   }
 
   .footer__nav {

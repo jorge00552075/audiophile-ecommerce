@@ -18,7 +18,7 @@ function FeatureRow() {
               key={Math.trunc(Math.random() * 10000)}
             >
               <img
-                src={`../assets/shared/desktop/image-category-thumbnail-${item}.png`}
+                src={`../../assets/shared/desktop/image-category-thumbnail-${item}.webp`}
                 alt={`${item}-thumbnail`}
                 className={styles.feature__image}
               />

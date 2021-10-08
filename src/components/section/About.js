@@ -1,18 +1,18 @@
 import styles from "./About.module.css";
 
 // SRC FOLDER
-import lg_bestgear from "../../assets/shared/desktop/image-best-gear.jpg";
-import md_bestgear from "../../assets/shared/tablet/image-best-gear.jpg";
-import sm_bestgear from "../../assets/shared/mobile/image-best-gear.jpg";
+import lg_bestgear from "../../assets/shared/desktop/image-best-gear.webp";
+import md_bestgear from "../../assets/shared/tablet/image-best-gear.webp";
+import sm_bestgear from "../../assets/shared/mobile/image-best-gear.webp";
 
 function About() {
   return (
     <section className={styles.about}>
       <div className={styles.about__content}>
         <div className={styles.text__content}>
-          <h2 className={styles.about__heading}>
+          <h3 className={styles.about__heading}>
             Bringing you the <span>best</span> audio gear
-          </h2>
+          </h3>
           <p className={styles.about__text}>
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers and audio
@@ -30,15 +30,16 @@ function About() {
             height="100%"
           />
           <source
-            media="(min-width: 640px)"
+            media="(min-width: 711px)"
             srcSet={md_bestgear}
             width="100%"
             height="100%"
           />
           <source
-            media="(min-width: 327px)"
+            media="(min-width: 100px)"
             srcSet={sm_bestgear}
             width="100%"
+            height="100%"
           />
           <img src={lg_bestgear} alt="Man listening to music on headphones" />
         </picture>

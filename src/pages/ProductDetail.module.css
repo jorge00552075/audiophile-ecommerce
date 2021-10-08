@@ -8,7 +8,7 @@
 }
 
 .productcard {
-  max-width: 111rem;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2.4rem;

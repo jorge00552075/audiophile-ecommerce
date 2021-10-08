@@ -13,7 +13,7 @@ function ProductCard({ data }) {
           >
             {data.new && <span>new product</span>}
             <h2 className={styles.productcard__title}>{data.name}</h2>
-            <p className={styles.productcard__text}>{data.description}</p>
+            <h3 className={styles.productcard__text}>{data.description}</h3>
             <Link
               to={`${"/product/"}${data.slug}`}
               className={styles.productcard__link}
@@ -47,7 +47,7 @@ function ProductCard({ data }) {
           <div className={styles.productcard__content}>
             {data.new && <span>new product</span>}
             <h2 className={styles.productcard__title}>{data.name}</h2>
-            <p className={styles.productcard__text}>{data.description}</p>
+            <h3 className={styles.productcard__text}>{data.description}</h3>
             <Link
               to={`${"/product/"}${data.slug}`}
               className={styles.productcard__link}

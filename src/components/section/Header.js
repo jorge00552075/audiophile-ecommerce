@@ -21,7 +21,11 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
-        <button className={styles.header__btn} onClick={handleChange}>
+        <button
+          title="menu button"
+          className={styles.header__btn}
+          onClick={handleChange}
+        >
           <Menu className={styles.header__menu} />
         </button>
         <Logo />
@@ -39,7 +43,11 @@ function Header() {
             EARPHONES
           </Link>
         </nav>
-        <Link to={total ? "/checkout" : "#"} className={styles.header__link}>
+        <Link
+          title="shopping cart link"
+          to={total ? "/checkout" : "#"}
+          className={styles.header__link}
+        >
           <Icon />
         </Link>
       </div>

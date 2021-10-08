@@ -23,18 +23,15 @@ function Category() {
 
   if (data === null) return <div className="loader"></div>;
 
+  const products = data.map((item, i) => (
+    <ProductCard data={data[i]} key={Math.trunc(Math.random() * 10000)} />
+  ));
+
   return (
     <main>
       <PageTitle title={params.slug} />
       <section className={styles.section}>
-        <div className={styles.section__content}>
-          {data.map((item, i) => (
-            <ProductCard
-              data={data[i]}
-              key={Math.trunc(Math.random() * 10000)}
-            />
-          ))}
-        </div>
+        <div className={styles.section__content}>{products}</div>
       </section>
       <FeatureRow />
       <About />

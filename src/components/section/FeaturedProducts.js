@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Circles } from "../../assets/home/desktop/pattern-circles.svg";
+// src/assets/home/mobile/image-speaker-zx9.webp
+import sm_speaker9 from "../../assets/home/mobile/image-speaker-zx9.webp";
 import lg_speaker from "../../assets/home/desktop/image-speaker-zx7.jpg";
 import md_speaker from "../../assets/home/tablet/image-speaker-zx7.jpg";
 import sm_speaker from "../../assets/home/mobile/image-speaker-zx7.jpg";
@@ -17,7 +19,7 @@ function FeaturedProducts() {
         <div className={styles["featured__row-1"]}>
           <Circles />
           <img
-            src="../../assets/home/desktop/image-speaker-zx9.png"
+            src={sm_speaker9}
             alt="ZX9 Speaker"
             className={styles.featured__image}
           />
@@ -35,7 +37,7 @@ function FeaturedProducts() {
 
         <div className={styles["featured__row-2"]}>
           <div className={styles.featured__content}>
-            <h3 className={styles["featured__title--sm"]}>ZX7 Speaker</h3>
+            <h2 className={styles["featured__title--sm"]}>ZX7 Speaker</h2>
             <Link
               to="/product/zx7-speaker"
               className={`${styles["featured__link"]} ${styles["featured__link--outline"]}`}
@@ -51,7 +53,7 @@ function FeaturedProducts() {
               height="100%"
             />
             <source
-              media="(min-width: 640px)"
+              media="(min-width: 711px)"
               srcSet={md_speaker}
               width="100%"
               height="100%"
@@ -74,13 +76,13 @@ function FeaturedProducts() {
               height="100%"
             />
             <source
-              media="(min-width: 640px)"
+              media="(min-width: 711px)"
               srcSet={md_earphones}
               width="100%"
               height="100%"
             />
             <source
-              media="(min-width: 320px)"
+              media="(min-width: 1px)"
               srcSet={sm_earphones}
               width="100%"
               height="100%"
@@ -90,7 +92,7 @@ function FeaturedProducts() {
         </div>
         <div className={styles["featured__row-4"]}>
           <div className={styles.featured__content}>
-            <h3 className={styles["featured__title--sm"]}>YX1 Earphones</h3>
+            <h2 className={styles["featured__title--sm"]}>YX1 Earphones</h2>
             <Link
               to="/product/yx1-earphones"
               className={`${styles["featured__link"]} ${styles["featured__link--outline"]}`}

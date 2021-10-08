@@ -3,14 +3,14 @@
 }
 
 .section__content {
-  max-width: 102.4rem;
+  max-width: 111rem;
   margin: 0 auto;
   display: grid;
   row-gap: 9.6rem;
 }
 
 .productcard {
-  max-width: 102.4rem;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2.4rem;

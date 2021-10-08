@@ -106,7 +106,7 @@ function ProductDetail() {
         <section className={styles["section-features"]}>
           <div className={styles["features__col-1"]}>
             <h2 className={styles.features__heading}>features</h2>
-            <p className={styles.features__features}>{data.features}</p>
+            <h3 className={styles.features__features}>{data.features}</h3>
           </div>
           <div className={styles["features__col-2"]}>
             <h2 className={styles.features__heading}>in the box</h2>

@@ -5,11 +5,10 @@
 .featurerow__content {
   max-width: 111rem;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  gap: 1.2rem;
+  gap: 2.4rem;
 }
 
 .feature__card {
@@ -78,6 +77,7 @@
 @media (max-width: 1080px) {
   .featurerow__content {
     width: 68.9rem;
+    gap: 1rem;
   }
 
   .feature__card {
@@ -85,7 +85,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 711px) {
   .featurerow__content {
     max-width: 32.7rem;
     grid-template-columns: 1fr;
@@ -93,6 +93,6 @@
   }
 
   .feature__card {
-    max-width: 100%;
+    max-width: 32.7rem;
   }
 }

@@ -55,7 +55,7 @@ function ModalOverylay(props) {
           <article className={styles.summary__item}>
             <img
               src={context.cart[0].image}
-              alt="headphones"
+              alt={context.cart[0].name}
               className={styles.summary__image}
             />
             <div>

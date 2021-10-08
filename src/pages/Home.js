@@ -19,5 +19,3 @@ function Home() {
 }
 
 export default Home;
-
-// TABLET => 689 WIDTH
