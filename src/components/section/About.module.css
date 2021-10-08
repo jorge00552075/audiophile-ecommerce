@@ -13,6 +13,12 @@
   justify-items: center;
 }
 
+.about__content picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .about__heading {
   font-size: 4rem;
   letter-spacing: 2px;

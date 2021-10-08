@@ -23,7 +23,7 @@ function FeatureRow() {
                 className={styles.feature__image}
               />
               <div className={styles.feature__content}>
-                <p>{item}</p>
+                <h2>{item}</h2>
                 <Link to={`/${item}`} className={styles.feature__link}>
                   shop
                   <Rarr />

@@ -64,11 +64,9 @@ function ProductDetail() {
         <section className={styles.section}>
           <div className={styles.section__content}>
             <article className={styles.productcard}>
+              {/* prettier-ignore */}
               <picture>
-                <source
-                  media="(min-width: 1080px)"
-                  srcSet={data.image.desktop}
-                />
+                <source media="(min-width: 1080px)" srcSet={data.image.desktop}/>
                 <source media="(min-width: 640px)" srcSet={data.image.tablet} />
                 <source media="(min-width: 327px)" srcSet={data.image.mobile} />
                 <img src={data.image.desktop} alt={data.image.name} />
@@ -157,25 +155,18 @@ function ProductDetail() {
                     <source
                       media="(min-width: 1080px)"
                       srcSet={data.others[i].image.desktop}
-                      width="100%"
-                      className={styles.others__image}
                     />
                     <source
                       media="(min-width: 640px)"
                       srcSet={data.others[i].image.tablet}
-                      width="223px"
-                      className={styles.others__image}
                     />
                     <source
                       media="(min-width: 327px)"
                       srcSet={data.others[i].image.mobile}
-                      width="100%"
-                      className={styles.others__image}
                     />
                     <img
                       src={data.others[i].image.tablet}
                       alt={data.others[i].name}
-                      className={styles.others__image}
                     />
                   </picture>
                   <div className={styles.card__content}>

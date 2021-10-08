@@ -46,47 +46,17 @@ function FeaturedProducts() {
             </Link>
           </div>
           <picture>
-            <source
-              media="(min-width: 1080px)"
-              srcSet={lg_speaker}
-              width="100%"
-              height="100%"
-            />
-            <source
-              media="(min-width: 711px)"
-              srcSet={md_speaker}
-              width="100%"
-              height="100%"
-            />
-            <source
-              media="(min-width: 320px)"
-              srcSet={sm_speaker}
-              width="100%"
-              height="100%"
-            />
+            <source media="(min-width: 1080px)" srcSet={lg_speaker} />
+            <source media="(min-width: 711px)" srcSet={md_speaker} />
+            <source media="(min-width: 320px)" srcSet={sm_speaker} />
             <img src={lg_speaker} alt="ZX7 Speaker" />
           </picture>
         </div>
         <div className={styles["featured__row-3"]}>
           <picture>
-            <source
-              media="(min-width: 1080px)"
-              srcSet={lg_earphones}
-              width="100%"
-              height="100%"
-            />
-            <source
-              media="(min-width: 711px)"
-              srcSet={md_earphones}
-              width="100%"
-              height="100%"
-            />
-            <source
-              media="(min-width: 1px)"
-              srcSet={sm_earphones}
-              width="100%"
-              height="100%"
-            />
+            <source media="(min-width: 1080px)" srcSet={lg_earphones} />
+            <source media="(min-width: 711px)" srcSet={md_earphones} />
+            <source media="(min-width: 1px)" srcSet={sm_earphones} />
             <img src={lg_earphones} alt="YX1 Wireless Earphones" />
           </picture>
         </div>

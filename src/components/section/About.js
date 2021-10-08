@@ -23,24 +23,9 @@ function About() {
           </p>
         </div>
         <picture>
-          <source
-            media="(min-width: 1080px)"
-            srcSet={lg_bestgear}
-            width="100%"
-            height="100%"
-          />
-          <source
-            media="(min-width: 711px)"
-            srcSet={md_bestgear}
-            width="100%"
-            height="100%"
-          />
-          <source
-            media="(min-width: 100px)"
-            srcSet={sm_bestgear}
-            width="100%"
-            height="100%"
-          />
+          <source media="(min-width: 1080px)" srcSet={lg_bestgear} />
+          <source media="(min-width: 711px)" srcSet={md_bestgear} />
+          <source media="(min-width: 100px)" srcSet={sm_bestgear} />
           <img src={lg_bestgear} alt="Man listening to music on headphones" />
         </picture>
       </div>
